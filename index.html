@@ -314,56 +314,109 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
   .reveal{opacity:1;transform:none;}
 }
     
-/* 1. PROFESSIONAL PASSWORD OVERLAY */
-/* --- PASSWORD OVERLAY STYLES --- */
-#password-screen {
-    position: fixed; inset: 0;
-    background: linear-gradient(135deg, #0A1F5C, #1042B0);
-    display: flex; align-items: center; justify-content: center;
-    z-index: 10000;
-}
-.password-box {
-    background: white; padding: 40px; border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3); text-align: center;
-    max-width: 400px; width: 90%; border-top: 5px solid #D4A017;
-}
-#password-input {
-    width: 100%; padding: 12px; font-size: 1.2rem; margin: 20px 0;
-    border: 2px solid #D1DBE8; border-radius: 8px; text-align: center;
-}
-#submit-btn {
-    background: #1565C0; color: white; border: none;
-    padding: 12px 30px; border-radius: 8px; font-weight: 700; cursor: pointer;
-}
-#error-msg { color: #DC2626; margin-top: 10px; font-size: 0.9rem; min-height: 20px; }
+    /* ADD THIS NEW PASSWORD STYLES */
+            #password-screen {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: linear-gradient(135deg, #0A1F5C, #1042B0);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 9999;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+            .password-box {
+                background: white;
+                padding: 40px 50px;
+                border-radius: 16px;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+                text-align: center;
+                max-width: 380px;
+                width: 90%;
+            }
+            .password-box h2 {
+                color: #0A1F5C;
+                margin-bottom: 20px;
+            }
+            #password-input {
+                width: 100%;
+                padding: 14px 16px;
+                font-size: 1.1rem;
+                border: 2px solid #D1DBE8;
+                border-radius: 8px;
+                margin: 15px 0;
+                text-align: center;
+                letter-spacing: 2px;
+            }
+            #password-input:focus {
+                outline: none;
+                border-color: #1565C0;
+            }
+            #submit-btn {
+                background: #1565C0;
+                color: white;
+                border: none;
+                padding: 14px 40px;
+                font-size: 1rem;
+                font-weight: 700;
+                border-radius: 8px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+            #submit-btn:hover {
+                background: #1042B0;
+            }
+            #error-msg {
+                color: #DC2626;
+                margin-top: 12px;
+                font-size: 0.9rem;
+                min-height: 20px;
+            }
+            
+            // Block right-click 
 
-/* Hidden state for content */
-#main-secure-content { display: none; }
+document.addEventListener('contextmenu', e => e.preventDefault());
 
-.reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+// Block common DevTools shortcuts
 
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
-}
+document.addEventListener('keydown', function(e) {
+
+    if (
+
+        e.key === 'F12' ||
+
+        (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) ||
+
+        (e.ctrlKey && e.key === 'U')
+
+    ) {
+
+        e.preventDefault();
+
+    }
+
+});
+
+// Detect DevTools
+
+setInterval(function() {
+
+    const devtoolsOpen =
+
+        window.outerWidth - window.innerWidth > 100 ||
+
+        window.outerHeight - window.innerHeight > 100;
+
+    if (devtoolsOpen) {
+
+        document.body.innerHTML = "Access Denied";
+
+    }
+
+}, 1000);
 </style>
 </head>
 <body>
-
-<div id="password-screen">
-    <div class="password-box">
-        <img src="https://egkhor.com.my/home/wp-content/uploads/2026/02/cropped-IMG_7598.png" style="height:50px; margin-bottom:15px;">
-        <h2>🔒 Akses Terhad</h2>
-        <p style="color:#D4A017; font-weight:700; font-size:0.8rem; letter-spacing:1px;">EGK & KPM CONFIDENTIAL</p>
-        <input type="password" id="password-input" placeholder="Masukkan Kata Laluan" autocomplete="off">
-        <button id="submit-btn">Akses Dokumen</button>
-        <div id="error-msg"></div>
-    </div>
-</div>
-
-<div id="main-secure-content">
 
 <!-- ─── CREST HEADER ─── -->
 <div class="crest-bar">
@@ -1062,13 +1115,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
 </section>
 <div class="section-divider"></div>
 
-<!-- ─── SECTION 11: KOS & PEMBIAYAAN ─── -->
+<!-- ─── SECTION 12: KOS & PEMBIAYAAN ─── -->
 <section id="kos" class="formal-section">
   <div class="section-wrap">
-    <div class="sec-num reveal">11 · Kos &amp; Pembiayaan</div>
+    <div class="sec-num reveal">12 · Kos &amp; Pembiayaan</div>
     <h2 class="sec-heading reveal">Berapakah Kos?<br>Siapa yang Akan Membiayainya?</h2>
     <p class="sec-lead reveal">Kos terbahagi kepada kos perolehan awal (sekali sahaja) dan kos penyelenggaraan tahunan. Penanggung kos yang dicadangkan untuk perolehan pukal ini adalah <strong>Kementerian Pendidikan Malaysia (KPM)</strong>, disalurkan melalui dana perolehan teknologi pendidikan dan inovasi KPM.</p>
-
+ 
     <div style="background:linear-gradient(135deg,#040F2E,#0A2050);border-radius:12px;padding:20px 24px;margin-bottom:28px;display:flex;align-items:center;gap:16px;" class="reveal">
       <div style="font-size:2.5rem;flex-shrink:0;">&#127963;</div>
       <div>
@@ -1077,36 +1130,30 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
         <div style="font-size:.8rem;color:rgba(255,255,255,.65);">Disalurkan melalui dana perolehan teknologi pendidikan dan inovasi KPM</div>
       </div>
     </div>
-
+ 
     <table class="req-table reveal">
       <thead>
         <tr><th>Perkara</th><th style="text-align:right;min-width:150px;">Harga / Kos</th><th>Pengiraan / Catatan</th></tr>
       </thead>
       <tbody>
         <tr style="background:#EFF6FF;"><td colspan="3" style="font-weight:800;color:var(--navy);font-size:.8rem;letter-spacing:.5px;padding:10px 14px;">&#128309; KOS PEROLEHAN AWAL (SEKALI SAHAJA)</td></tr>
-        
         <tr>
           <td><strong>Kos Perolehan Lesen Pukal</strong><br><span style="font-size:.76rem;color:var(--muted);">Lesen Aplikasi EGK AIAdv AR (Akses Penuh Tahun 1–6)</span></td>
-          <td style="text-align:right;"><strong style="font-size:1.1rem;color:var(--navy);">RM XXX</strong><br><span style="font-size:.72rem;color:var(--muted);">per peranti</span></td>
+          <td style="text-align:right;"><strong style="font-size:1.1rem;color:var(--navy);">RM 30</strong><br><span style="font-size:.72rem;color:var(--muted);">per peranti</span></td>
           <td style="font-size:.8rem;color:var(--muted);">Lesen aplikasi EGK AIAdv AR (akses penuh Tahun 1–6)<br>Dibayar <em>sekali</em> bagi setiap peranti murid / sekolah</td>
         </tr>
-        
         <tr>
           <td><strong>Kos Latihan Nasional</strong><br><span style="font-size:.76rem;color:var(--muted);">Program Latihan Guru Utama Peringkat Nasional</span></td>
-          <td style="text-align:right;"><strong style="font-size:1.1rem;color:var(--navy);">RM XXX</strong><br><span style="font-size:.72rem;color:var(--muted);">kos tetap</span></td>
+          <td style="text-align:right;"><strong style="font-size:1.1rem;color:var(--navy);">RM 150,000</strong><br><span style="font-size:.72rem;color:var(--muted);">kos tetap</span></td>
           <td style="font-size:.8rem;color:var(--muted);">Latihan penggunaan buku &amp; aplikasi<br>Modul pedagogi AI &amp; etika<br>Boleh melatih jurulatih negeri (<em>train-the-trainer</em>)</td>
         </tr>
-
         <tr style="background:#F0FDF4;"><td colspan="3" style="font-weight:800;color:#166534;font-size:.8rem;letter-spacing:.5px;padding:10px 14px;">&#128994; KOS PELESENAN TAHUNAN (BERTERUSAN)</td></tr>
-        
         <tr>
           <td><strong>Kos Pelesenan Tahunan</strong><br><span style="font-size:.76rem;color:var(--muted);">Penyelenggaraan &amp; Kemas Kini Berterusan</span></td>
-          <td style="text-align:right;"><strong style="font-size:1.1rem;color:var(--navy);">RM XXX</strong><br><span style="font-size:.72rem;color:var(--muted);">per peranti / tahun</span></td>
+          <td style="text-align:right;"><strong style="font-size:1.1rem;color:var(--navy);">RM 10</strong><br><span style="font-size:.72rem;color:var(--muted);">per peranti / tahun</span></td>
           <td style="font-size:.8rem;color:var(--muted);">Penyelenggaraan kandungan<br>Kemas kini AR &amp; AI<br>Sokongan teknikal<br>Penambahbaikan selaras dasar KPM &amp; UNESCO</td>
         </tr>
-
         <tr style="background:#FFFBEB;"><td colspan="3" style="font-weight:800;color:#92400E;font-size:.8rem;letter-spacing:.5px;padding:10px 14px;">&#128218; KOS BUKU FIZIKAL (BERASINGAN)</td></tr>
-        
         <tr>
           <td><strong>Kos Buku (Hak Cipta &amp; Pencetakan)</strong><br><span style="font-size:.76rem;color:var(--muted);">Buku Fizikal Berhak Cipta EGK</span></td>
           <td style="text-align:right;"><strong style="font-size:1.1rem;color:var(--navy);">Mengikut Bilangan</strong><br><span style="font-size:.72rem;color:var(--muted);">boleh dirunding</span></td>
@@ -1114,30 +1161,28 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
         </tr>
       </tbody>
     </table>
-
+ 
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:24px;">
       <div style="background:linear-gradient(135deg,var(--navy),#0D2560);border-radius:12px;padding:20px;text-align:center;color:white;" class="reveal">
         <div style="font-size:.72rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Jumlah Kos Tahun Pertama</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#D4A017;font-weight:800;">RM XXX</div>
-        <div style="font-size:.74rem;color:rgba(255,255,255,.6);margin-top:4px;">Bagi XXX peranti</div>
-        <div style="font-size:.7rem;color:rgba(255,255,255,.45);margin-top:3px;">Termasuk lesen pukal + latihan nasional (tidak termasuk kos buku fizikal)</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#D4A017;font-weight:800;">RM 190,000</div>
+        <div style="font-size:.74rem;color:rgba(255,255,255,.6);margin-top:4px;">Bagi 1,000 peranti</div>
+        <div style="font-size:.7rem;color:rgba(255,255,255,.45);margin-top:3px;">Termasuk lesen pukal + latihan nasional</div>
       </div>
-
       <div style="background:linear-gradient(135deg,#166534,#16a34a);border-radius:12px;padding:20px;text-align:center;color:white;" class="reveal">
-        <div style="font-size:.72rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Huraian Jumlah Kos</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#86EFAC;font-weight:800;">RM XXX</div>
-        <div style="font-size:.74rem;color:rgba(255,255,255,.7);margin-top:4px;">(Akan dijelaskan semasa pembentangan)</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Huraian Kos Keseluruhan</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#86EFAC;font-weight:800;">RM 190,000</div>
+        <div style="font-size:.74rem;color:rgba(255,255,255,.7);margin-top:4px;">RM 30X1,000 lesen + RM 150,000 latihan + RM 10x1,000 kemas</div>
         <div style="font-size:.7rem;color:rgba(255,255,255,.55);margin-top:3px;">Tidak termasuk kos buku fizikal</div>
       </div>
-
       <div style="background:linear-gradient(135deg,#92400E,#B45309);border-radius:12px;padding:20px;text-align:center;color:white;" class="reveal">
         <div style="font-size:.72rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Kos Tahunan Berterusan</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#FDE68A;font-weight:800;">RM XXX</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#FDE68A;font-weight:800;">RM 10</div>
         <div style="font-size:.74rem;color:rgba(255,255,255,.7);margin-top:4px;">per peranti / tahun</div>
         <div style="font-size:.7rem;color:rgba(255,255,255,.55);margin-top:3px;">Selepas tahun pertama</div>
       </div>
     </div>
-
+ 
     <div style="margin-top:24px;background:linear-gradient(135deg,#FAFAF7,#F5F5EE);border:1px solid #E8D5A3;border-radius:12px;padding:22px 24px;border-left:4px solid #D4A017;" class="reveal">
       <div style="font-weight:800;font-size:.9rem;color:var(--navy);margin-bottom:12px;">&#128161; Nilai untuk Wang (Value for Money)</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:.82rem;color:var(--muted);line-height:1.9;">
@@ -1155,11 +1200,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
         </div>
       </div>
     </div>
-
+ 
     <div style="margin-top:16px;background:#FFF1F2;border:1px solid #FECDD3;border-radius:8px;padding:12px 16px;font-size:.78rem;color:#9F1239;" class="reveal">
-      <strong>&#128204; Nota Penting:</strong> Angka kos sebenar akan ditunjukkan secara langsung semasa pembentangan. 
-      Anggaran di atas adalah berdasarkan 1,000 unit. Kos akhir akan disesuaikan mengikut bilangan murid, sekolah dan skop projek rintis. 
-      EGK bersedia berbincang mengenai pakej perolehan pukal yang lebih optimum untuk skala nasional.
+      <strong>&#128204; Nota:</strong> Kos di atas adalah anggaran untuk 1,000 unit. Kos sebenar akan disesuaikan mengikut bilangan murid, sekolah dan negeri yang terlibat dalam projek rintis. EGK bersedia untuk berbincang mengenai pakej perolehan pukal yang lebih baik untuk skala nasional.
     </div>
   </div>
 </section>
@@ -1277,65 +1320,92 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
   </div>
 </div>
 
-// ==================== LOGIK SECURITY ====================
+<!-- PASSWORD SCREEN -->
+<div id="password-screen">
+    <div class="password-box">
+        <h2>🔒 Pembentangan Sulit</h2>
+        <p class="subtitle-royal">Rahsia EGK & KPM</p>
+      
+        <p style="color:#5A6A82; margin-bottom:20px;">Masukkan kata laluan untuk melihat dokumen ini</p>
+        
+        <input type="password" id="password-input" placeholder="Kata Laluan" autocomplete="off">
+        <button id="submit-btn">Masuk</button>
+        <div id="error-msg"></div>
+    </div>
+</div>
+
 <script>
-const SECRET_HASH = "1616766488349887756f7e440b82b992120027f6368d495764d2629352e00843";
+    
+    // ==================== PASSWORD PROTECTION ====================
+    const correctPassword = "KpmEgk2026";
 
-async function hashString(str) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(str);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
+    function checkPassword() {
+        const input = document.getElementById("password-input").value.trim();
+        const errorMsg = document.getElementById("error-msg");
+        const passwordScreen = document.getElementById("password-screen");
 
-async function verifyAccess() {
-  const inputField = document.getElementById("password-input");
-  const errorMsg = document.getElementById("error-msg");
-  const screen = document.getElementById("password-screen");
-  const content = document.getElementById("main-secure-content");
+        if (input === correctPassword) {
+            passwordScreen.style.display = "none";   // Hide password screen
+            document.body.style.overflow = "auto";   // Enable scrolling
+        } else {
+            errorMsg.textContent = "❌ Kata laluan salah. Sila cuba lagi.";
+            document.getElementById("password-input").value = "";
+            document.getElementById("password-input").focus();
+            
+            // Shake animation
+            passwordScreen.style.animation = "shake 0.4s";
+            setTimeout(() => passwordScreen.style.animation = "", 400);
+        }
+    }
 
-  const inputHash = await hashString(inputField.value.trim());
-
-  if (inputHash === SECRET_HASH) {
-    screen.style.display = "none";
-    content.style.display = "block";
-    document.body.style.overflow = "auto";
-    initAppLogic();
-  } else {
-    errorMsg.textContent = "❌ Kata laluan tidak sah.";
-    inputField.value = "";
-    inputField.focus();
-    screen.style.animation = "shake 0.4s";
-    setTimeout(() => screen.style.animation = "", 400);
-  }
-}
-
-function initAppLogic() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.snav-link');
-
-  const navObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        navLinks.forEach(l =>
-          l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id)
-        );
-      }
+    // Enter key support
+    document.getElementById("password-input").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            checkPassword();
+        }
     });
-  }, { threshold: 0.3 });
 
-  sections.forEach(s => navObs.observe(s));
+    document.getElementById("submit-btn").addEventListener("click", checkPassword);
+
+    // Optional: Add shake animation
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-10px); }
+            40%, 80% { transform: translateX(10px); }
+        }
+    `;
+    document.head.appendChild(style);
+    // ==================== END PASSWORD PROTECTION ====================
+// Video tab switching
+function switchVideo(id,el){
+  document.querySelectorAll('.vtab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.video-panel').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('vp-'+id).classList.add('active');
 }
 
-document.getElementById("submit-btn").addEventListener("click", verifyAccess);
-document.getElementById("password-input").addEventListener("keypress", (e) => {
-  if (e.key === "Enter") verifyAccess();
-});
+// Sticky nav active section tracking
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.snav-link');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(l=>{
+        l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id);
+      });
+    }
+  });
+},{threshold:.3});
+sections.forEach(s=>observer.observe(s));
 
-document.body.style.overflow = "hidden";
+// Scroll reveal
+const revObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);}});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
 </script>
-
 </body>
 </html>
 
