@@ -1280,6 +1280,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
 <script>
 // ==================== LOGIK SECURITY ====================
 // Hash untuk "KpmEgk2026"
+<script>
+// ==================== SECURITY LOGIC ====================
 const SECRET_HASH = "1616766488349887756f7e440b82b992120027f6368d495764d2629352e00843";
 
 async function hashString(str) {
@@ -1302,49 +1304,62 @@ async function verifyAccess() {
         screen.style.display = "none";
         content.style.display = "block";
         document.body.style.overflow = "auto";
-        initAppLogic(); 
+        initAppLogic();           // your existing app initialization
     } else {
         errorMsg.textContent = "❌ Kata laluan tidak sah.";
         inputField.value = "";
         inputField.focus();
+
+        // Shake animation
         screen.style.animation = "shake 0.4s";
-        setTimeout(() => screen.style.animation = "", 400);
+        setTimeout(() => { screen.style.animation = ""; }, 400);
     }
 }
 
-// ==================== LOGIK INTERAKTIF ====================
+// ==================== APP LOGIC ====================
 function initAppLogic() {
-    // 1. Sticky Nav Observer
+    // Nav Observer
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.snav-link');
-    const navObserver = new IntersectionObserver(entries => {
+
+    const navObs = new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting) {
-                navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+                navLinks.forEach(l => {
+                    l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+                });
             }
         });
     }, { threshold: 0.3 });
-    sections.forEach(s => navObserver.observe(s));
 
-    // 2. Scroll Reveal
-    const revealObserver = new IntersectionObserver(entries => {
+    sections.forEach(s => navObs.observe(s));
+
+    // Reveal Observer
+    const revObs = new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting) {
                 e.target.classList.add('visible');
-                revealObserver.unobserve(e.target);
+                revObs.unobserve(e.target);
             }
         });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+    // Add any other initialization code you need here
 }
 
-// Listeners
+// ==================== EVENT LISTENERS ====================
 document.getElementById("submit-btn").addEventListener("click", verifyAccess);
+
 document.getElementById("password-input").addEventListener("keypress", (e) => {
-    if (e.key === "Enter") verifyAccess();
+    if (e.key === "Enter") {
+        verifyAccess();
+    }
 });
 
-// Initial Lock
+// Initial state - hide main content and lock scroll
+document.getElementById("main-secure-content").style.display = "none";
 document.body.style.overflow = "hidden";
 </script>
 
