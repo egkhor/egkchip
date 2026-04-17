@@ -1277,89 +1277,62 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
   </div>
 </div>
 
-<script>
 // ==================== LOGIK SECURITY ====================
-// Hash untuk "KpmEgk2026"
 <script>
-// ==================== SECURITY LOGIC ====================
 const SECRET_HASH = "1616766488349887756f7e440b82b992120027f6368d495764d2629352e00843";
 
 async function hashString(str) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(str);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  const encoder = new TextEncoder();
+  const data = encoder.encode(str);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
 async function verifyAccess() {
-    const inputField = document.getElementById("password-input");
-    const errorMsg = document.getElementById("error-msg");
-    const screen = document.getElementById("password-screen");
-    const content = document.getElementById("main-secure-content");
+  const inputField = document.getElementById("password-input");
+  const errorMsg = document.getElementById("error-msg");
+  const screen = document.getElementById("password-screen");
+  const content = document.getElementById("main-secure-content");
 
-    const inputHash = await hashString(inputField.value.trim());
+  const inputHash = await hashString(inputField.value.trim());
 
-    if (inputHash === SECRET_HASH) {
-        screen.style.display = "none";
-        content.style.display = "block";
-        document.body.style.overflow = "auto";
-        initAppLogic();           // your existing app initialization
-    } else {
-        errorMsg.textContent = "❌ Kata laluan tidak sah.";
-        inputField.value = "";
-        inputField.focus();
-
-        // Shake animation
-        screen.style.animation = "shake 0.4s";
-        setTimeout(() => { screen.style.animation = ""; }, 400);
-    }
+  if (inputHash === SECRET_HASH) {
+    screen.style.display = "none";
+    content.style.display = "block";
+    document.body.style.overflow = "auto";
+    initAppLogic();
+  } else {
+    errorMsg.textContent = "❌ Kata laluan tidak sah.";
+    inputField.value = "";
+    inputField.focus();
+    screen.style.animation = "shake 0.4s";
+    setTimeout(() => screen.style.animation = "", 400);
+  }
 }
 
-// ==================== APP LOGIC ====================
 function initAppLogic() {
-    // Nav Observer
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.snav-link');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.snav-link');
 
-    const navObs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                navLinks.forEach(l => {
-                    l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
-                });
-            }
-        });
-    }, { threshold: 0.3 });
+  const navObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l =>
+          l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id)
+        );
+      }
+    });
+  }, { threshold: 0.3 });
 
-    sections.forEach(s => navObs.observe(s));
-
-    // Reveal Observer
-    const revObs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add('visible');
-                revObs.unobserve(e.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
-
-    // Add any other initialization code you need here
+  sections.forEach(s => navObs.observe(s));
 }
 
-// ==================== EVENT LISTENERS ====================
 document.getElementById("submit-btn").addEventListener("click", verifyAccess);
-
 document.getElementById("password-input").addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        verifyAccess();
-    }
+  if (e.key === "Enter") verifyAccess();
 });
 
-// Initial state - hide main content and lock scroll
-document.getElementById("main-secure-content").style.display = "none";
 document.body.style.overflow = "hidden";
 </script>
 
