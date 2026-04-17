@@ -315,71 +315,55 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
 }
     
 /* 1. PROFESSIONAL PASSWORD OVERLAY */
-    #password-screen {
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: linear-gradient(135deg, #0A1F5C, #1042B0);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 99999; /* Ensure it stays on top of everything */
-        font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .password-box {
-        background: white;
-        padding: 40px 50px;
-        border-radius: 16px;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        text-align: center;
-        max-width: 380px;
-        width: 90%;
-        border-top: 5px solid #D4AF37; /* EGK Gold Accent */
-    }
-    .password-box h2 { color: #0A1F5C; margin-bottom: 10px; }
-    .subtitle-royal { color: #D4AF37; font-weight: bold; margin-bottom: 20px; font-size: 0.9rem; letter-spacing: 1px; }
-    
-    #password-input {
-        width: 100%;
-        padding: 14px 16px;
-        font-size: 1.1rem;
-        border: 2px solid #D1DBE8;
-        border-radius: 8px;
-        margin: 15px 0;
-        text-align: center;
-        letter-spacing: 4px;
-    }
-    #password-input:focus { outline: none; border-color: #1565C0; }
-    
-    #submit-btn {
-        background: #1565C0;
-        color: white;
-        border: none;
-        padding: 14px 40px;
-        font-size: 1rem;
-        font-weight: 700;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    #submit-btn:hover { background: #1042B0; transform: translateY(-2px); }
-    
-    #error-msg { color: #DC2626; margin-top: 12px; font-size: 0.9rem; min-height: 20px; }
+/* --- PASSWORD OVERLAY STYLES --- */
+#password-screen {
+    position: fixed; inset: 0;
+    background: linear-gradient(135deg, #0A1F5C, #1042B0);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10000;
+}
+.password-box {
+    background: white; padding: 40px; border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3); text-align: center;
+    max-width: 400px; width: 90%; border-top: 5px solid #D4A017;
+}
+#password-input {
+    width: 100%; padding: 12px; font-size: 1.2rem; margin: 20px 0;
+    border: 2px solid #D1DBE8; border-radius: 8px; text-align: center;
+}
+#submit-btn {
+    background: #1565C0; color: white; border: none;
+    padding: 12px 30px; border-radius: 8px; font-weight: 700; cursor: pointer;
+}
+#error-msg { color: #DC2626; margin-top: 10px; font-size: 0.9rem; min-height: 20px; }
 
-    /* 2. THE CONTENT GATEKEEPER */
-    /* We hide the entire body content until the password is correct */
-    #main-secure-content {
-        display: none; 
-    }
+/* Hidden state for content */
+#main-secure-content { display: none; }
 
-    @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        20%, 60% { transform: translateX(-10px); }
-        40%, 80% { transform: translateX(10px); }
-    }
-  
+.reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
 </style>
 </head>
 <body>
+
+<div id="password-screen">
+    <div class="password-box">
+        <img src="https://egkhor.com.my/home/wp-content/uploads/2026/02/cropped-IMG_7598.png" style="height:50px; margin-bottom:15px;">
+        <h2>🔒 Akses Terhad</h2>
+        <p style="color:#D4A017; font-weight:700; font-size:0.8rem; letter-spacing:1px;">EGK & KPM CONFIDENTIAL</p>
+        <input type="password" id="password-input" placeholder="Masukkan Kata Laluan" autocomplete="off">
+        <button id="submit-btn">Akses Dokumen</button>
+        <div id="error-msg"></div>
+    </div>
+</div>
+
+<div id="main-secure-content">
 
 <!-- ─── CREST HEADER ─── -->
 <div class="crest-bar">
@@ -1293,27 +1277,11 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
   </div>
 </div>
 
-<div id="main-secure-content">
-    </div>
-
-<div id="password-screen">
-    <div class="password-box">
-        <h2>🔒 Pembentangan Sulit</h2>
-        <p class="subtitle-royal">RAHSIA EGK & KPM</p>
-        <p style="color:#5A6A82; margin-bottom:20px;">Dokumen ini dilindungi. Sila masukkan kata laluan rasmi.</p>
-        <input type="password" id="password-input" placeholder="••••••" autocomplete="off">
-        <button id="submit-btn">Akses Dokumen</button>
-        <div id="error-msg"></div>
-    </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 <script>
-// ==================== SECURE HASHED PROTECTION ====================
-// Replace the old hash with this new one for KpmEgk2026
+// ==================== LOGIK SECURITY ====================
+// Hash untuk "KpmEgk2026"
 const SECRET_HASH = "1616766488349887756f7e440b82b992120027f6368d495764d2629352e00843";
 
-// Native function to hash the password without external libraries
 async function hashString(str) {
     const encoder = new TextEncoder();
     const data = encoder.encode(str);
@@ -1324,24 +1292,18 @@ async function hashString(str) {
 
 async function verifyAccess() {
     const inputField = document.getElementById("password-input");
-    const input = inputField.value.trim();
     const errorMsg = document.getElementById("error-msg");
     const screen = document.getElementById("password-screen");
     const content = document.getElementById("main-secure-content");
 
-    // Generate hash from user input
-    const inputHash = await hashString(input);
+    const inputHash = await hashString(inputField.value.trim());
 
     if (inputHash === SECRET_HASH) {
-        // SUCCESS
         screen.style.display = "none";
         content.style.display = "block";
         document.body.style.overflow = "auto";
-        
-        // Re-initialize your observers and tabs
         initAppLogic(); 
     } else {
-        // FAIL
         errorMsg.textContent = "❌ Kata laluan tidak sah.";
         inputField.value = "";
         inputField.focus();
@@ -1350,40 +1312,30 @@ async function verifyAccess() {
     }
 }
 
-// ==================== CORE APP LOGIC ====================
+// ==================== LOGIK INTERAKTIF ====================
 function initAppLogic() {
-    // 1. Video tab switching
-    window.switchVideo = function(id, el) {
-        document.querySelectorAll('.vtab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.video-panel').forEach(p => p.classList.remove('active'));
-        el.classList.add('active');
-        document.getElementById('vp-' + id).classList.add('active');
-    };
-
-    // 2. Sticky nav tracking
+    // 1. Sticky Nav Observer
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.snav-link');
-    const observer = new IntersectionObserver(entries => {
+    const navObserver = new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting) {
-                navLinks.forEach(l => {
-                    l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
-                });
+                navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
             }
         });
-    }, { threshold: .3 });
-    sections.forEach(s => observer.observe(s));
+    }, { threshold: 0.3 });
+    sections.forEach(s => navObserver.observe(s));
 
-    // 3. Scroll reveal
-    const revObs = new IntersectionObserver(entries => {
+    // 2. Scroll Reveal
+    const revealObserver = new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting) {
                 e.target.classList.add('visible');
-                revObs.unobserve(e.target);
+                revealObserver.unobserve(e.target);
             }
         });
-    }, { threshold: .1 });
-    document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 }
 
 // Listeners
@@ -1392,9 +1344,10 @@ document.getElementById("password-input").addEventListener("keypress", (e) => {
     if (e.key === "Enter") verifyAccess();
 });
 
-// Initial State
+// Initial Lock
 document.body.style.overflow = "hidden";
 </script>
+
 </body>
 </html>
 
