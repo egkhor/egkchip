@@ -1310,28 +1310,41 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:va
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 <script>
 // ==================== SECURE HASHED PROTECTION ====================
-// The fingerprint for "Kp2026". Inspect Element cannot reveal the original text.
-const SECRET_HASH = "70509a259976722d7d8e87494488b010b9f056d649f85c7c25c345f8f9024f07";
+// Replace the old hash with this new one for KpmEgk2026
+const SECRET_HASH = "1616766488349887756f7e440b82b992120027f6368d495764d2629352e00843";
 
-function verifyAccess() {
-    const input = document.getElementById("password-input").value.trim();
+// Native function to hash the password without external libraries
+async function hashString(str) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(str);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function verifyAccess() {
+    const inputField = document.getElementById("password-input");
+    const input = inputField.value.trim();
     const errorMsg = document.getElementById("error-msg");
     const screen = document.getElementById("password-screen");
     const content = document.getElementById("main-secure-content");
 
-    if (sha256(input) === SECRET_HASH) {
-        // Success Logic
+    // Generate hash from user input
+    const inputHash = await hashString(input);
+
+    if (inputHash === SECRET_HASH) {
+        // SUCCESS
         screen.style.display = "none";
         content.style.display = "block";
         document.body.style.overflow = "auto";
         
-        // Re-initialize your observers and tabs now that content is visible
+        // Re-initialize your observers and tabs
         initAppLogic(); 
     } else {
-        // Fail Logic
+        // FAIL
         errorMsg.textContent = "❌ Kata laluan tidak sah.";
-        document.getElementById("password-input").value = "";
-        document.getElementById("password-input").focus();
+        inputField.value = "";
+        inputField.focus();
         screen.style.animation = "shake 0.4s";
         setTimeout(() => screen.style.animation = "", 400);
     }
@@ -1379,7 +1392,7 @@ document.getElementById("password-input").addEventListener("keypress", (e) => {
     if (e.key === "Enter") verifyAccess();
 });
 
-// Block scrolling while locked
+// Initial State
 document.body.style.overflow = "hidden";
 </script>
 </body>
