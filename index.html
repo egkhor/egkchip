@@ -1,1413 +1,1586 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EGK AI Adventure — Pembentangan Kepada Kementerian Pendidikan Malaysia</title>
+<title>EGK Microelectronic Solutions Group — ESD Coating Specialist, Penang</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:    #0A1F5C;
-  --royal:   #1042B0;
-  --blue:    #1565C0;
-  --sky:     #E8F4FD;
-  --gold:    #B8860B;
-  --gold2:   #D4A017;
-  --amber:   #F59E0B;
-  --cream:   #FAFAF7;
-  --white:   #FFFFFF;
-  --ink:     #1A1A2E;
-  --muted:   #5A6A82;
-  --border:  #D1DBE8;
-  --accent:  #DC2626;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ─── CREST HEADER ─── */
-.crest-bar{
-  background:linear-gradient(135deg,var(--navy) 0%,#0D2560 60%,#1042B0 100%);
-  padding:16px 40px;
-  display:flex;align-items:center;justify-content:space-between;
-  border-bottom:3px solid var(--gold2);
-}
-.crest-left{display:flex;align-items:center;gap:14px;}
-.crest-logo{height:52px;border-radius:8px;filter:brightness(1.05);}
-.crest-titles{}
-.crest-main{font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);font-weight:700;letter-spacing:.5px;}
-.crest-sub{font-size:.72rem;color:rgba(255,255,255,.65);margin-top:2px;letter-spacing:.8px;text-transform:uppercase;}
-.crest-right{text-align:right;}
-.crest-date{font-size:.72rem;color:rgba(255,255,255,.6);letter-spacing:.8px;text-transform:uppercase;}
-.crest-ref{font-size:.78rem;color:var(--gold2);font-weight:700;margin-top:2px;}
+  :root {
+    --bg: #08090d;
+    --surface: #0f1118;
+    --surface2: #161923;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.13);
+    --text: #e8eaf0;
+    --muted: #7a8099;
+    --accent: #00c8ff;
+    --accent2: #0066ff;
+    --gold: #c8a84b;
+    --green: #00e5a0;
+    --red: #ff4455;
+  }
 
-/* ─── HERO COVER ─── */
-#hero{
-  background:linear-gradient(160deg,#040F2E 0%,#0A2050 40%,#1042B0 80%,#1565C0 100%);
-  padding:70px 40px 60px;
-  text-align:center;position:relative;overflow:hidden;
-}
-#hero::before{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-  background-size:44px 44px;pointer-events:none;
-}
-.hero-classified{
-  display:inline-flex;align-items:center;gap:8px;
-  border:1px solid rgba(212,160,23,.5);background:rgba(212,160,23,.1);
-  color:var(--gold2);font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  padding:5px 18px;border-radius:4px;margin-bottom:22px;
-}
-.hero-to{font-size:.78rem;color:rgba(255,255,255,.55);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
-.hero-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2rem,5vw,3.5rem);color:var(--white);line-height:1.1;margin-bottom:8px;
-}
-.hero-title span{color:#7DD3FC;}
-.hero-sub{font-size:clamp(1rem,2vw,1.3rem);color:rgba(255,255,255,.7);margin-bottom:24px;font-weight:500;}
-.hero-book-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:28px;}
-.hero-book{height:clamp(140px,20vw,200px);border-radius:10px;box-shadow:0 16px 48px rgba(0,0,0,.5);transition:transform .3s;}
-.hero-book:hover{transform:scale(1.06) rotate(-2deg);}
-.hero-tagline{
-  font-size:.88rem;color:rgba(255,255,255,.6);margin-top:22px;
-  letter-spacing:.5px;line-height:1.7;
-}
-.hero-tagline strong{color:var(--gold2);}
-.aida-hero{width:clamp(100px,14vw,150px);filter:drop-shadow(0 12px 28px rgba(0,0,0,.4));animation:float 4s ease-in-out infinite;margin-top:20px;}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  html { scroll-behavior: smooth; }
 
-/* ─── SECTION WRAPPER ─── */
-.section-wrap{max-width:960px;margin:0 auto;padding:0 28px;}
-.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0;}
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 
-/* ─── FORMAL SECTION ─── */
-.formal-section{padding:56px 0;background:var(--white);}
-.formal-section.alt{background:var(--cream);}
-.formal-section.dark{background:linear-gradient(135deg,var(--navy),#0D2560);color:white;}
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: 9999;
+  }
 
-.sec-num{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  color:var(--gold2);margin-bottom:10px;
-}
-.sec-num::before{content:'';width:20px;height:1.5px;background:var(--gold2);}
-.sec-heading{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.5rem,3vw,2.3rem);color:var(--navy);line-height:1.2;margin-bottom:14px;
-}
-.formal-section.dark .sec-heading{color:white;}
-.sec-lead{font-size:.97rem;color:var(--muted);line-height:1.85;max-width:720px;margin-bottom:28px;}
-.formal-section.dark .sec-lead{color:rgba(255,255,255,.7);}
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 68px;
+    background: rgba(8,9,13,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
 
-/* ─── HIGHLIGHT QUOTE ─── */
-.highlight-quote{
-  border-left:4px solid var(--gold2);
-  padding:16px 22px;background:rgba(212,160,23,.06);
-  border-radius:0 10px 10px 0;margin:20px 0;
-  font-style:italic;font-size:1rem;color:var(--navy);line-height:1.8;
-}
-.formal-section.dark .highlight-quote{background:rgba(212,160,23,.08);color:#E8F0FE;border-color:var(--gold2);}
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+  }
 
-/* ─── GRID LAYOUTS ─── */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px;}
-.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px;}
-.four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px;}
+  .nav-logo-mark {
+    width: 34px; height: 34px;
+    background: linear-gradient(135deg, var(--accent2), var(--accent));
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+  }
 
-/* ─── INFO CARD ─── */
-.info-card{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:12px;padding:22px 20px;
-  border-top:3px solid var(--royal);
-}
-.formal-section.alt .info-card{background:var(--white);}
-.info-card-icon{font-size:1.8rem;margin-bottom:10px;}
-.info-card-title{font-weight:800;font-size:.92rem;color:var(--navy);margin-bottom:6px;}
-.info-card-body{font-size:.82rem;color:var(--muted);line-height:1.65;}
+  .nav-logo-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .nav-logo-text small {
+    display: block;
+    font-size: 0.65rem;
+    color: var(--muted);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
 
-/* ─── STAT BOX ─── */
-.stat-box{
-  background:linear-gradient(135deg,var(--navy),var(--royal));
-  border-radius:12px;padding:20px;text-align:center;color:white;
-}
-.stat-box-n{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--gold2);display:block;margin-bottom:4px;}
-.stat-box-l{font-size:.75rem;font-weight:700;opacity:.8;text-transform:uppercase;letter-spacing:.8px;}
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
 
-/* ─── ALIGNMENT BADGE ─── */
-.align-badge{
-  display:inline-flex;align-items:center;gap:7px;
-  padding:7px 16px;border-radius:6px;font-size:.8rem;font-weight:700;margin:4px;
-  border:1px solid;
-}
-.ab-blue{background:#EFF6FF;color:var(--royal);border-color:#BFDBFE;}
-.ab-green{background:#F0FDF4;color:#166534;border-color:#BBF7D0;}
-.ab-gold{background:#FFFBEB;color:#92400E;border-color:#FDE68A;}
-.ab-red{background:#FFF1F2;color:#9F1239;border-color:#FECDD3;}
-.badges-wrap{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
 
-/* ─── PILLAR CARD ─── */
-.pillar{
-  background:var(--white);border-radius:12px;padding:20px 16px;
-  text-align:center;border:1px solid var(--border);
-  border-bottom:3px solid var(--royal);
-  transition:transform .25s;
-}
-.pillar:hover{transform:translateY(-4px);}
-.pillar-num{font-family:'Playfair Display',serif;font-size:2rem;color:rgba(16,66,176,.2);display:block;}
-.pillar-icon{font-size:1.6rem;margin-bottom:6px;}
-.pillar-title{font-weight:800;font-size:.88rem;color:var(--navy);margin-bottom:5px;}
-.pillar-body{font-size:.76rem;color:var(--muted);line-height:1.6;}
+  .nav-cta {
+    background: var(--accent2);
+    color: #fff !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--accent) !important; color: #000 !important; }
 
-/* ─── BOOK SECTION ─── */
-.book-showcase{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px;align-items:start;}
-.book-card{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
-.book-covers-row{display:flex;gap:8px;padding:18px 18px 0;justify-content:center;background:linear-gradient(135deg,#EEF4FF,#E8F0FE);}
-.book-cov{height:clamp(120px,18vw,170px);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.2);transition:transform .3s;}
-.book-cov:hover{transform:rotate(-3deg) scale(1.04);}
-.book-info{padding:18px;}
-.book-lang{display:inline-block;font-size:.7rem;font-weight:800;padding:2px 10px;border-radius:50px;margin-bottom:8px;letter-spacing:.8px;text-transform:uppercase;}
-.bl-ms{background:#E8F5E9;color:#2E7D32;}
-.bl-en{background:#E3F2FD;color:#1565C0;}
-.bl-zh{background:#FFF3E0;color:#E65100;}
-.book-title{font-weight:800;font-size:.95rem;color:var(--navy);margin-bottom:3px;}
-.book-isbn{font-size:.72rem;color:#9CA3AF;margin-bottom:8px;}
-.book-features{list-style:none;font-size:.78rem;color:var(--muted);line-height:2;}
-.book-features li::before{content:'✓ ';color:var(--royal);font-weight:700;}
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 14px 30px; border-radius: 50px;
-  font-family: 'Baloo 2', cursive;
-  font-size: 1rem; font-weight: 800;
-  text-decoration: none; cursor: pointer; border: none;
-  transition: all 0.25s; letter-spacing: 0.3px;
-}
-.btn-gold {
-  background: linear-gradient(135deg, #FFD600, #FF8F00);
-  color: #0A2A6B;
-  box-shadow: 0 8px 28px rgba(255,214,0,0.45);
-}
-.btn-gold:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(255,214,0,0.6); }
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    position: relative;
+    padding: 120px 3rem 80px;
+    overflow: hidden;
+  }
 
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,102,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,102,255,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+  }
 
-/* ─── YEAR CURRICULUM ─── */
-.year-row{display:flex;gap:0;margin-top:20px;overflow-x:auto;}
-.year-block{
-  flex:1;min-width:100px;padding:14px 10px;text-align:center;
-  border-right:1px solid var(--border);
-}
-.year-block:last-child{border-right:none;}
-.yb-year{font-family:'Playfair Display',serif;font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:4px;}
-.yb-topic{font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:50px;margin-bottom:6px;display:inline-block;}
-.yb-body{font-size:.7rem;color:var(--muted);line-height:1.5;}
-.y1{background:#E8F5E9;color:#166534;}
-.y2{background:#EDE9FE;color:#5B21B6;}
-.y3{background:#FEF3C7;color:#92400E;}
-.y4{background:#FEE2E2;color:#991B1B;}
-.y5{background:#E0F2FE;color:#075985;}
-.y6{background:#F0FDF4;color:#14532D;}
+  .hero-glow {
+    position: absolute;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,102,255,0.12) 0%, transparent 70%);
+    left: 50%; top: 40%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .hero-glow2 {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,200,255,0.08) 0%, transparent 70%);
+    right: 10%; top: 20%;
+    pointer-events: none;
+  }
 
-/* ─── VIDEO PLAYER ─── */
-.video-section{margin-top:28px;}
-.video-tabs{display:flex;gap:8px;margin-bottom:14px;}
-.vtab{padding:8px 20px;border-radius:6px;font-weight:700;font-size:.82rem;cursor:pointer;border:2px solid var(--border);background:var(--white);color:var(--muted);transition:all .2s;}
-.vtab.active{background:var(--royal);color:white;border-color:var(--royal);}
-.video-panel{display:none;}
-.video-panel.active{display:block;}
-.video-container{
-  position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;
-  border-radius:12px;background:#000;border:2px solid var(--border);
-  box-shadow:0 8px 32px rgba(10,31,92,.15);
-}
-.video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.video-caption{font-size:.78rem;color:var(--muted);margin-top:8px;text-align:center;font-style:italic;}
+  .hero-inner {
+    position: relative;
+    text-align: center;
+    max-width: 900px;
+  }
 
-/* ─── PPTX EMBED ─── */
-.ppt-wrap{
-  width:100%;border-radius:12px;overflow:hidden;
-  border:2px solid var(--border);box-shadow:0 8px 32px rgba(10,31,92,.12);
-  background:#f3f4f6;
-}
-.ppt-header{
-  background:var(--navy);padding:10px 16px;
-  display:flex;align-items:center;gap:10px;
-  font-size:.78rem;color:rgba(255,255,255,.8);font-weight:700;
-}
-.ppt-embed{width:100%;height:520px;border:none;display:block;}
-.ppt-note{font-size:.76rem;color:var(--muted);margin-top:8px;text-align:center;font-style:italic;}
-.ppt-alt{
-  background:var(--white);border:2px dashed var(--border);border-radius:12px;
-  padding:32px;text-align:center;
-}
-.ppt-alt-icon{font-size:3rem;margin-bottom:12px;}
-.ppt-alt-title{font-weight:700;color:var(--navy);margin-bottom:8px;}
-.ppt-alt-desc{font-size:.82rem;color:var(--muted);margin-bottom:16px;line-height:1.6;}
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.9rem;
+    background: rgba(0,102,255,0.1);
+    border: 1px solid rgba(0,102,255,0.3);
+    border-radius: 100px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.8s ease both;
+  }
 
-/* ─── APP DOWNLOAD ─── */
-.app-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:16px;}
-.app-icon-sm{width:56px;height:56px;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.2);}
-.app-dl-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--navy);color:white;padding:9px 18px;border-radius:8px;
-  text-decoration:none;font-size:.8rem;font-weight:700;transition:all .2s;
-}
-.app-dl-btn:hover{background:var(--royal);transform:translateY(-2px);}
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
 
-/* ─── ENDORSEMENT ─── */
-.endorse-box{
-  background:linear-gradient(135deg,#FDF9EE,#FFFBF0);
-  border:1px solid #E8D5A3;border-radius:12px;padding:22px 24px;
-  border-left:4px solid var(--gold2);
-}
-.endorse-quote{font-style:italic;font-size:.95rem;color:var(--ink);line-height:1.8;margin-bottom:10px;}
-.endorse-author{font-size:.8rem;font-weight:700;color:var(--gold);}
-.endorse-role{font-size:.74rem;color:var(--muted);}
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
 
-/* ─── REQUEST TABLE ─── */
-.req-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:.85rem;}
-.req-table th{background:var(--navy);color:white;padding:11px 14px;text-align:left;font-weight:700;font-size:.78rem;letter-spacing:.5px;}
-.req-table td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--ink);}
-.req-table tr:nth-child(even) td{background:var(--sky);}
-.req-table tr:hover td{background:#EEF4FF;}
-.badge-pill{display:inline-block;font-size:.68rem;font-weight:800;padding:2px 10px;border-radius:50px;text-transform:uppercase;letter-spacing:.7px;}
-.bp-yes{background:#DCFCE7;color:#166534;}
-.bp-ready{background:#DBEAFE;color:#1E40AF;}
-.bp-review{background:#FEF9C3;color:#854D0E;}
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.92;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
 
-/* ─── FOOTER ─── */
-.formal-footer{
-  background:var(--navy);color:rgba(255,255,255,.7);
-  padding:32px 40px 24px;border-top:3px solid var(--gold2);
-}
-.ff-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;}
-.ff-title{font-size:.72rem;font-weight:800;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
-.ff-line{font-size:.8rem;line-height:1.9;}
-.ff-bottom{max-width:960px;margin:20px auto 0;border-top:1px solid rgba(255,255,255,.1);padding-top:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:.72rem;color:rgba(255,255,255,.4);}
+  .hero-title .accent { color: var(--accent); }
+  .hero-title .accent2 { color: var(--accent2); }
+  .hero-title em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--gold);
+  }
 
-/* ─── STICKY NAV ─── */
-.sticky-nav{
-  position:sticky;top:0;z-index:900;
-  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-  padding:0 28px;
-}
-.sticky-nav-inner{max-width:960px;margin:0 auto;display:flex;gap:0;overflow-x:auto;}
-.snav-link{
-  padding:14px 16px;font-size:.78rem;font-weight:700;color:var(--muted);
-  text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;
-  transition:all .2s;display:block;
-}
-.snav-link:hover,.snav-link.active{color:var(--royal);border-bottom-color:var(--royal);}
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
 
-/* ─── REVEAL ─── */
-.reveal{opacity:0;transform:translateY(18px);transition:all .6s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
 
-/* ─── PRINT / RESPONSIVE ─── */
-@media(max-width:700px){
-  .two-col,.three-col,.four-col,.book-showcase,.ff-inner{grid-template-columns:1fr;}
-  .year-block{min-width:80px;}
-  .crest-bar{padding:12px 16px;flex-wrap:wrap;gap:10px;}
-}
-@media print{
-  .sticky-nav{display:none;}
-  .video-container{display:none;}
-  .reveal{opacity:1;transform:none;}
-}
-    
-    /* ADD THIS NEW PASSWORD STYLES */
-            #password-screen {
-                position: fixed;
-                top: 0; left: 0; right: 0; bottom: 0;
-                background: linear-gradient(135deg, #0A1F5C, #1042B0);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 9999;
-                font-family: 'Plus Jakarta Sans', sans-serif;
-            }
-            .password-box {
-                background: white;
-                padding: 40px 50px;
-                border-radius: 16px;
-                box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-                text-align: center;
-                max-width: 380px;
-                width: 90%;
-            }
-            .password-box h2 {
-                color: #0A1F5C;
-                margin-bottom: 20px;
-            }
-            #password-input {
-                width: 100%;
-                padding: 14px 16px;
-                font-size: 1.1rem;
-                border: 2px solid #D1DBE8;
-                border-radius: 8px;
-                margin: 15px 0;
-                text-align: center;
-                letter-spacing: 2px;
-            }
-            #password-input:focus {
-                outline: none;
-                border-color: #1565C0;
-            }
-            #submit-btn {
-                background: #1565C0;
-                color: white;
-                border: none;
-                padding: 14px 40px;
-                font-size: 1rem;
-                font-weight: 700;
-                border-radius: 8px;
-                cursor: pointer;
-                margin-top: 10px;
-            }
-            #submit-btn:hover {
-                background: #1042B0;
-            }
-            #error-msg {
-                color: #DC2626;
-                margin-top: 12px;
-                font-size: 0.9rem;
-                min-height: 20px;
-            }
-            
-            // Block right-click 
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
 
-document.addEventListener('contextmenu', e => e.preventDefault());
+  .btn-primary {
+    background: var(--accent2);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: var(--accent);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,200,255,0.25);
+  }
 
-// Block common DevTools shortcuts
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border2);
+  }
+  .btn-outline:hover {
+    border-color: var(--accent2);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
 
-document.addEventListener('keydown', function(e) {
+  /* ── STATS BAR ── */
+  .stats-bar {
+    padding: 0 3rem;
+    margin-bottom: 6rem;
+    animation: fadeUp 0.8s 0.6s ease both;
+  }
 
-    if (
+  .stats-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--surface);
+  }
 
-        e.key === 'F12' ||
+  .stat-item {
+    padding: 1.4rem 1.2rem;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-right: none; }
 
-        (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) ||
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: var(--accent);
+    line-height: 1;
+    display: block;
+  }
 
-        (e.ctrlKey && e.key === 'U')
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.3rem;
+  }
 
-    ) {
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-        e.preventDefault();
+  /* ── SECTION COMMONS ── */
+  section { padding: 5rem 3rem; }
 
-    }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+  }
 
-});
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
 
-// Detect DevTools
+  .section-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 540px;
+  }
 
-setInterval(function() {
+  .container { max-width: 1200px; margin: 0 auto; }
 
-    const devtoolsOpen =
+  /* ── RESISTIVITY SECTION ── */
+  .resistivity {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
 
-        window.outerWidth - window.innerWidth > 100 ||
+  .resistivity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
 
-        window.outerHeight - window.innerHeight > 100;
+  .resist-chart {
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    padding: 2rem;
+    font-family: 'DM Mono', monospace;
+  }
 
-    if (devtoolsOpen) {
+  .resist-zones {
+    display: flex;
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 56px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border2);
+  }
 
-        document.body.innerHTML = "Access Denied";
+  .zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding: 0 0.5rem;
+    transition: all 0.3s;
+  }
 
-    }
+  .zone-conductive {
+    flex: 1;
+    background: rgba(255,68,85,0.15);
+    color: var(--red);
+    border-right: 1px solid var(--border);
+  }
 
-}, 1000);
+  .zone-dissipative {
+    flex: 2;
+    background: rgba(0,229,160,0.12);
+    color: var(--green);
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+
+  .zone-dissipative::after {
+    content: '✔ EGK TARGET';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    color: var(--green);
+    white-space: nowrap;
+    letter-spacing: 0.08em;
+  }
+
+  .zone-insulative {
+    flex: 1;
+    background: rgba(255,68,85,0.08);
+    color: var(--red);
+  }
+
+  .resist-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.78rem;
+  }
+  .resist-row:last-child { border-bottom: none; }
+
+  .resist-dot {
+    width: 8px; height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .resist-tag {
+    font-weight: 500;
+    color: var(--text);
+    flex: 1;
+  }
+  .resist-val { color: var(--muted); }
+
+  /* ── COATINGS GRID ── */
+  .coatings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  .coating-card {
+    background: var(--surface);
+    padding: 1.8rem;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .coating-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .coating-card:hover { background: var(--surface2); }
+  .coating-card:hover::before { transform: scaleX(1); }
+
+  .coating-id {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .coating-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .coating-tag {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .coating-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .spec-key { color: var(--muted); }
+  .spec-val { color: var(--text); }
+
+  .coating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(0,229,160,0.08);
+    border: 1px solid rgba(0,229,160,0.2);
+    border-radius: 100px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--green);
+    letter-spacing: 0.08em;
+  }
+
+  .coating-badge::before {
+    content: '';
+    width: 5px; height: 5px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+
+  /* ── INDUSTRIES ── */
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .industry-card {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .industry-card:hover {
+    border-color: var(--border2);
+    background: var(--surface2);
+  }
+
+  .industry-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface2);
+    border-radius: 10px;
+  }
+
+  .industry-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .industry-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  .industry-products {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--accent);
+  }
+
+  /* ── WHY EGK ── */
+  .why-bg {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 3rem;
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .why-item {
+    padding: 2rem 1.5rem;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+  .why-item:last-child { border-right: none; }
+
+  .why-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: rgba(0,102,255,0.12);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .why-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .why-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .testimonial-card {
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    position: relative;
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem; right: 1.5rem;
+    font-family: 'Instrument Serif', serif;
+    font-size: 5rem;
+    color: rgba(0,102,255,0.1);
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .author-name {
+    font-weight: 700;
+    font-size: 0.88rem;
+  }
+
+  .author-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── PARTNERS ── */
+  .partners-strip {
+    padding: 3rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .partners-label {
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .partners-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .partner-tag {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .partner-tag:hover { opacity: 1; color: var(--text); }
+
+  /* ── PORTALS ── */
+  .portals-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  .portal-card {
+    background: var(--surface);
+    padding: 1.8rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.2s;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .portal-card:hover { background: var(--surface2); }
+
+  .portal-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .portal-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+
+  .portal-desc {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .portal-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding: 6rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,102,255,0.08) 0%, transparent 70%);
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .cta-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+
+  .cta-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .contact-item a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .contact-item a:hover { color: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand-text {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 1rem 0;
+  }
+
+  .footer-col-title {
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent); }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+
+  /* ── DIVIDERS ── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── SCROLL INDICATOR ── */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: fadeUp 1s 1s ease both;
+  }
+
+  .scroll-arrow {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--muted), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  @keyframes scrollPulse {
+    0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: scaleY(1); transform-origin: top; }
+  }
+
+  /* ── TICKER ── */
+  .ticker {
+    background: rgba(0,102,255,0.08);
+    border-top: 1px solid rgba(0,102,255,0.15);
+    border-bottom: 1px solid rgba(0,102,255,0.15);
+    padding: 0.7rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .ticker-inner {
+    display: inline-flex;
+    gap: 3rem;
+    animation: tickerScroll 30s linear infinite;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent2);
+    letter-spacing: 0.06em;
+  }
+
+  .ticker-inner span { opacity: 0.7; }
+  .ticker-inner strong { opacity: 1; font-weight: 500; }
+
+  @keyframes tickerScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── IP COUNTERS ── */
+  .ip-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  .ip-item {
+    background: var(--surface);
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .ip-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+  }
+
+  .ip-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.4rem;
+    line-height: 1.4;
+  }
+
 </style>
 </head>
 <body>
 
-<!-- ─── CREST HEADER ─── -->
-<div class="crest-bar">
-  <div class="crest-left">
-    <img class="crest-logo" src="https://egkhor.com.my/home/wp-content/uploads/2026/02/cropped-IMG_7598.png" alt="EGK Logo">
-    <div class="crest-titles">
-      <div class="crest-main">EGK Microelectronic Solutions Group Sdn. Bhd.</div>
-      <div class="crest-sub">Pembentangan Rasmi kepada Kementerian Pendidikan Malaysia</div>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">EGK</div>
+    <div class="nav-logo-text">
+      EGK Microelectronic
+      <small>Solutions Group Sdn. Bhd.</small>
     </div>
-  </div>
-  <div class="crest-right">
-    <div class="crest-date">April 2026 · Sulit</div>
-    <div class="crest-ref">Ruj: EGK/KPM/AILIT/2026</div>
-  </div>
-</div>
-
-<!-- ─── STICKY NAV ─── -->
-<nav class="sticky-nav">
-  <div class="sticky-nav-inner">
-    <a href="#hero" class="snav-link active">Muka Depan</a>
-    <a href="#latar" class="snav-link">Latar Belakang</a>
-    <a href="#produk" class="snav-link">Produk</a>
-    <a href="#kurikulum" class="snav-link">Kurikulum</a>
-    <a href="#buku" class="snav-link">Buku</a>
-    <a href="#ppt" class="snav-link">Slaid Pembentangan</a>
-    <a href="#demo" class="snav-link">Demo Video</a>
-    <a href="#app" class="snav-link">Aplikasi</a>
-    <a href="#sokongan" class="snav-link">Sokongan KPM</a>
-    <a href="#kategori" class="snav-link">Kategori &amp; Ciri</a>
-    <a href="#sasaran" class="snav-link">Sasaran Pengguna</a>
-    <a href="#kos" class="snav-link">Kos &amp; Pembiayaan</a>
-    <a href="#permohonan" class="snav-link">Permohonan</a>
-  </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#coatings">Coatings</a></li>
+    <li><a href="#medical">Medical</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="https://egkhor.com.my/software/" target="_blank">Software</a></li>
+    <li><a href="mailto:sales@egkhor.com.my" class="btn btn-outline nav-cta">Enquire Now</a></li>
+  </ul>
 </nav>
 
-<!-- ─── HERO COVER ─── -->
-<section id="hero" style="background:linear-gradient(160deg,#040F2E 0%,#0A2050 40%,#1042B0 80%,#1565C0 100%);padding:70px 40px 60px;text-align:center;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;"></div>
-  <div style="position:relative;z-index:2;max-width:800px;margin:0 auto;">
-    <div style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,160,23,.5);background:rgba(212,160,23,.1);color:#D4A017;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 18px;border-radius:4px;margin-bottom:20px;">
-      📋 Pembentangan Rasmi · Kementerian Pendidikan Malaysia
-    </div>
-    <div style="font-size:.78rem;color:rgba(255,255,255,.55);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">
-      Pembentangan Penilaian Bahan Pengajaran dan Pembelajaran (PdP) Produk Swasta KPM BIL. 1/2026 (Secara Atas Talian)
-    </div>
-    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);color:white;line-height:1.1;margin-bottom:8px;">
-      EGK AI Adventure<br><span style="color:#7DD3FC;">Pengembaraan AI</span>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Penang ESD Coating Specialist · 20+ Years Precision Engineering</div>
+    <h1 class="hero-title">
+      ESD <span class="accent">COATING</span><br>
+      FOR <em>Precision</em><br>
+      <span class="accent2">SEMICONDUCTOR</span> PARTS
     </h1>
-    <p style="font-size:clamp(.95rem,2vw,1.2rem);color:rgba(255,255,255,.7);margin-bottom:6px;font-weight:500;">
-      Buku Pendidikan AI Pertama di Malaysia untuk Sekolah Rendah (KSSR Tahun 1–6)
+    <p class="hero-sub">
+      Controlled dissipation coatings applied to test sockets, nests, fixtures, handler contact surfaces, and medical devices. 10⁵–10⁸ Ω. Automotive-grade. ANSI/ESD S20.20 compliant.
     </p>
-    <p style="font-size:.85rem;color:rgba(255,255,255,.5);letter-spacing:.5px;">
-      Selaras UNESCO AI Competency Framework 2022 · KSSR · Pelan Pembangunan Pendidikan Malaysia 2013–2025
-    </p>
-
-    <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px;">
-      <img class="hero-book" src="https://egkhor.com.my/home/wp-content/uploads/2025/12/Smart-Character-Edu-.png" alt="EN">
-      <img class="hero-book" src="https://egkhor.com.my/home/wp-content/uploads/2025/12/EGK-Pengembaraan-AI-.png" alt="BM" style="height:clamp(140px,20vw,200px);border-radius:10px;box-shadow:0 16px 48px rgba(0,0,0,.5);">
-      <img class="hero-book" src="https://egkhor.com.my/home/wp-content/uploads/2025/12/EGK-AI-探险之旅.png" alt="ZH">
-      <img src="https://egkhor.com.my/home/wp-content/uploads/2026/04/aida.png" class="aida-hero" alt="Aida">
-    </div>
-
-    <p style="font-size:.78rem;color:rgba(255,255,255,.5);margin-top:20px;line-height:1.7;">
-      <strong style="color:#D4A017;">ISBN EN:</strong> 978-629-94581-5-9 &nbsp;|&nbsp;
-      <strong style="color:#D4A017;">ISBN BM:</strong> 978-629-94581-4-2 &nbsp;|&nbsp;
-      <strong style="color:#D4A017;">ISBN ZH:</strong> 978-629-94581-8-0
-    </p>
-  </div>
-</section>
-<div class="section-divider"></div>
-
-<!-- ─── SECTION 1: LATAR BELAKANG ─── -->
-<section id="latar" class="formal-section alt">
-  <div class="section-wrap">
-    <div class="sec-num reveal">01 · Latar Belakang & Rasional</div>
-    <h2 class="sec-heading reveal">Mengapa Pendidikan AI<br>Perlu Bermula di Sekolah Rendah?</h2>
-    <p class="sec-lead reveal">
-      Malaysia sedang menuju era Ekonomi Digital. Namun kajian global menunjukkan bahawa pendedahan kepada
-      Kecerdasan Buatan (AI) di peringkat sekolah menengah sahaja adalah terlambat. EGK telah mengambil
-      inisiatif untuk memperkenalkan AI secara sistematik bermula dari Tahun 1 — selaras dengan panduan
-      UNESCO dan Pelan Induk AI Kebangsaan 2021–2025.
-    </p>
-
-    <div class="highlight-quote reveal">
-      "Kanak-kanak yang memahami AI hari ini akan menjadi pemimpin digital Malaysia esok hari.
-      Kita tidak boleh menunggu — peluang ini ada sekarang."
-      <br><strong>— Isaac Khor Eng Gian, Pengarang & Pengasas EGK</strong>
-    </div>
-
-    <div class="four-col">
-      <div class="stat-box reveal">
-        <span class="stat-box-n">68%</span>
-        <span class="stat-box-l">Pelajar Tahun 4–6 Sukar Fahami Konsep Abstrak (Kajian BTP 2023)</span>
-      </div>
-      <div class="stat-box reveal">
-        <span class="stat-box-n">2021</span>
-        <span class="stat-box-l">Pelan Induk AI Kebangsaan Dilancarkan — AI Perlu Masuk Sekolah</span>
-      </div>
-      <div class="stat-box reveal">
-        <span class="stat-box-n">Y1–Y6</span>
-        <span class="stat-box-l">Pertama di Malaysia — Liputan Penuh KSSR Sekolah Rendah</span>
-      </div>
-      <div class="stat-box reveal">
-        <span class="stat-box-n">UNESCO</span>
-        <span class="stat-box-l">AI Competency Framework 2022 — Dijadikan Panduan Utama</span>
-      </div>
-    </div>
-
-    <div class="two-col" style="margin-top:28px;">
-      <div class="info-card reveal">
-        <div class="info-card-icon">📜</div>
-        <div class="info-card-title">Dokumen Dasar yang Disokong</div>
-        <div class="info-card-body">
-          <div class="badges-wrap">
-            <span class="align-badge ab-blue">Pelan Pembangunan Pendidikan Malaysia 2013–2025</span>
-            <span class="align-badge ab-green">Pelan Induk AI Kebangsaan 2021–2025</span>
-            <span class="align-badge ab-gold">Malaysia MADANI</span>
-            <span class="align-badge ab-blue">UNESCO AI Competency Framework 2022</span>
-            <span class="align-badge ab-green">STEM Action Plan 2024–2026</span>
-            <span class="align-badge ab-gold">Digital Economy Blueprint</span>
-          </div>
-        </div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-card-icon">🌍</div>
-        <div class="info-card-title">Keunikan EGK AI Adventure</div>
-        <div class="info-card-body" style="font-size:.82rem;color:var(--muted);line-height:1.9;">
-          ✓ Satu-satunya buku AI lengkap Tahun 1–6 di Malaysia<br>
-          ✓ Tersedia dalam 3 bahasa: BM, Inggeris, Mandarin<br>
-          ✓ Dilengkapi aplikasi AR percuma EGK AIAdv AR<br>
-          ✓ Maskot AI "Aida" yang interaktif dalam 3D<br>
-          ✓ Tanpa peralatan mahal — hanya buku dan pensil<br>
-          ✓ Disahkan selaras DSKP KPM - https://bpk.moe.gov.my/kurikulum/kssr
-        </div>
-      </div>
+    <div class="hero-actions">
+      <a href="mailto:sales@egkhor.com.my?subject=ESD%20Coating%20Enquiry" class="btn btn-primary">
+        ⬤ Enquire About Coatings
+      </a>
+      <a href="mailto:admin@egkhor.com.my" class="btn btn-outline">
+        ▸ Talk to an Engineer
+      </a>
+      <a href="https://egkhor.com.my/hardware/" target="_blank" class="btn btn-outline">
+        ⚙ Hardware Portal
+      </a>
     </div>
   </div>
-</section>
-<div class="section-divider"></div>
 
-<!-- ─── SECTION 2: 4 KOMPETENSI UNESCO ─── -->
-<section id="produk" class="formal-section dark">
-  <div class="section-wrap">
-    <div class="sec-num reveal" style="color:#D4A017;">02 · Rangka Kerja Pedagogi</div>
-    <h2 class="sec-heading reveal">4 Kompetensi Teras AI<br><span style="color:#7DD3FC;">Berdasarkan UNESCO</span></h2>
-    <p class="sec-lead reveal">
-      Setiap bab buku EGK AI Adventure direka bentuk untuk memenuhi 4 kompetensi teras UNESCO AI
-      Competency Framework for Students (2022), yang juga selaras dengan Kurikulum AI untuk Guru
-      Sekolah Menengah UNESCO 2024 (pf0000391104).
-    </p>
-    <div class="four-col">
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:22px 16px;text-align:center;" class="reveal">
-        <span style="font-size:2rem;display:block;margin-bottom:8px;">🧠</span>
-        <span style="font-family:'Playfair Display',serif;font-size:1.6rem;color:rgba(255,255,255,.15);display:block;">1</span>
-        <div style="font-weight:800;font-size:.9rem;color:#7DD3FC;margin-bottom:6px;">Fahami AI</div>
-        <div style="font-size:.76rem;color:rgba(255,255,255,.6);line-height:1.6;">Belajar apa itu AI dan cara ia berfungsi — seperti sihir, tetapi ada peraturannya!</div>
-      </div>
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:22px 16px;text-align:center;" class="reveal">
-        <span style="font-size:2rem;display:block;margin-bottom:8px;">🛡️</span>
-        <span style="font-family:'Playfair Display',serif;font-size:1.6rem;color:rgba(255,255,255,.15);display:block;">2</span>
-        <div style="font-weight:800;font-size:.9rem;color:#7DD3FC;margin-bottom:6px;">Guna AI dengan Selamat</div>
-        <div style="font-size:.76rem;color:rgba(255,255,255,.6);line-height:1.6;">Bermain dengan aplikasi mesra kanak-kanak yang 100% selamat dan privasi terjaga.</div>
-      </div>
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:22px 16px;text-align:center;" class="reveal">
-        <span style="font-size:2rem;display:block;margin-bottom:8px;">🎨</span>
-        <span style="font-family:'Playfair Display',serif;font-size:1.6rem;color:rgba(255,255,255,.15);display:block;">3</span>
-        <div style="font-weight:800;font-size:.9rem;color:#7DD3FC;margin-bottom:6px;">Berkarya dengan AI</div>
-        <div style="font-size:.76rem;color:rgba(255,255,255,.6);line-height:1.6;">Hasilkan cerita, lukisan, dan projek sendiri dengan bantuan AI.</div>
-      </div>
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:22px 16px;text-align:center;" class="reveal">
-        <span style="font-size:2rem;display:block;margin-bottom:8px;">⚖️</span>
-        <span style="font-family:'Playfair Display',serif;font-size:1.6rem;color:rgba(255,255,255,.15);display:block;">4</span>
-        <div style="font-weight:800;font-size:.9rem;color:#7DD3FC;margin-bottom:6px;">Berfikir Bijak tentang AI</div>
-        <div style="font-size:.76rem;color:rgba(255,255,255,.6);line-height:1.6;">Sentiasa berlaku adil, jaga privasi, dan gunakan AI untuk membantu orang ramai.</div>
-      </div>
-    </div>
-
-    <div class="highlight-quote reveal" style="margin-top:28px;">
-      Silibus ini direka khas untuk mengatasi cadangan UNESCO K-12 AI Curriculum (Dokumen 2022),
-      dengan fokus kepada pendedahan AI di peringkat <strong>asas (umur 6–12 tahun)</strong> berbanding
-      peringkat menengah sahaja — menjadikan Malaysia antara yang pertama di dunia melaksanakannya.
-    </div>
-  </div>
-</section>
-<div class="section-divider"></div>
-
-<!-- ─── SECTION 3: KURIKULUM TAHUN 1–6 ─── -->
-<section id="kurikulum" class="formal-section">
-  <div class="section-wrap">
-    <div class="sec-num reveal">03 · Struktur Kurikulum</div>
-    <h2 class="sec-heading reveal">Perjalanan 6 Tahun<br>Pembelajaran AI</h2>
-    <p class="sec-lead reveal">
-      Setiap bab direka untuk satu tahun persekolahan, membina pengetahuan secara berperingkat —
-      dari pengenalan mesra AI di Tahun 1 hingga kepimpinan AI beretika di Tahun 6.
-    </p>
-
-    <div class="year-row reveal">
-      <div class="year-block">
-        <div class="yb-year">Tahun 1</div>
-        <span class="yb-topic y1">AI sebagai Kawan</span>
-        <div class="yb-body">Kenali Aida, cari AI di rumah, janji penggunaan AI</div>
-      </div>
-      <div class="year-block">
-        <div class="yb-year">Tahun 2</div>
-        <span class="yb-topic y2">Corak & Ramalan</span>
-        <div class="yb-body">AI cari corak, ramalan banjir Kelantan, reka batik AI</div>
-      </div>
-      <div class="year-block">
-        <div class="yb-year">Tahun 3</div>
-        <span class="yb-topic y3">Belajar bersama AI</span>
-        <div class="yb-body">Ajar AI, selamatkan harimau Malaya, privasi digital</div>
-      </div>
-      <div class="year-block">
-        <div class="yb-year">Tahun 4</div>
-        <span class="yb-topic y4">Cipta dengan AI</span>
-        <div class="yb-body">Prompt, cerita rakyat Malaysia, buku cerita kelas</div>
-      </div>
-      <div class="year-block">
-        <div class="yb-year">Tahun 5</div>
-        <span class="yb-topic y5">AI di Dunia Nyata</span>
-        <div class="yb-body">Pekerjaan AI, bandar pintar Putrajaya, alam sekitar</div>
-      </div>
-      <div class="year-block">
-        <div class="yb-year">Tahun 6</div>
-        <span class="yb-topic y6">AI Beretika</span>
-        <div class="yb-body">5 Peraturan AI Malaysia, bias, deepfake, projek akhir</div>
-      </div>
-    </div>
-
-    <div class="three-col" style="margin-top:28px;">
-      <div class="info-card reveal">
-        <div class="info-card-icon">📱</div>
-        <div class="info-card-title">Aplikasi AR Percuma</div>
-        <div class="info-card-body">Imbas QR dalam buku → Aida keluar dalam 3D! Permainan Simon Kata, 20 Soalan, sijil graduasi dan bunga api dalam AR.</div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-card-icon">🇲🇾</div>
-        <div class="info-card-title">Contoh 100% Malaysia</div>
-        <div class="info-card-body">Harimau Malaya, ramalan banjir Kelantan, reka batik, lampu isyarat Putrajaya, durian masak — AI melalui konteks tempatan.</div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-card-icon">👨‍👩‍👧</div>
-        <div class="info-card-title">Tiada Peralatan Mahal</div>
-        <div class="info-card-body">Mulakan dengan hanya buku dan pensil. Aplikasi AR percuma tersedia bila ada telefon atau tablet. Sesuai untuk semua sekolah.</div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="section-divider"></div>
-
-<!-- ─── SECTION 4: BUKU ─── -->
-<section id="buku" class="formal-section alt">
-  <div class="section-wrap">
-    <div class="sec-num reveal">04 · Penerbitan</div>
-    <h2 class="sec-heading reveal">Siri Buku EGK AI Adventure<br>dalam 3 Bahasa</h2>
-    <p class="sec-lead reveal">
-      Malaysia mengajar dalam 3 bahasa utama. EGK telah menerbitkan siri buku ini dalam
-      Bahasa Melayu, Bahasa Inggeris, dan Mandarin — memastikan setiap kanak-kanak Malaysia
-      dapat belajar AI dalam bahasa ibunda mereka.
-    </p>
-
-    <div class="book-showcase">
-      <!-- BM -->
-      <div class="book-card reveal">
-        <div class="book-covers-row">
-          <img class="book-cov" src="https://egkhor.com.my/home/wp-content/uploads/2025/12/EGK-Pengembaraan-AI-.png" alt="BM Depan">
-          <img class="book-cov" src="https://egkhor.com.my/home/wp-content/uploads/2026/01/Untitled-7.png" alt="BM Belakang">
-        </div>
-        <div class="book-info">
-          <span class="book-lang bl-ms">🇲🇾 Bahasa Melayu</span>
-          <div class="book-title">EGK Pengembaraan AI</div>
-          <div class="book-isbn">eISBN: 978-629-94581-4-2</div>
-          <a href="https://anyflip.com/schwm/lntn/" class="btn btn-gold" style="font-size:0.88rem;padding:10px 22px">Preview📚</a>
-          <a href="https://apps.apple.com/my/app/egk-bookstore/id6758967869" class="btn btn-gold" style="font-size:0.88rem;padding:10px 22px">EGK BookStore 🛒</a>
-          <a href="https://buy.stripe.com/4gM9AS0Rb7hbdj93IN6Zy04" class="btn btn-gold" style="font-size:0.88rem;padding:10px 22px">Order Now 🛒📚</a>
-          <ul class="book-features">
-            <li>Bahasa Melayu — sesuai untuk semua sekolah kebangsaan</li>
-            <li>Aplikasi AR percuma EGK AIAdv AR disertakan</li>
-            <li>6 bab untuk Tahun 1–6 KSSR</li>
-            <li>Maskot Aida bertutur dalam BM</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- EN -->
-      <div class="book-card reveal">
-        <div class="book-covers-row">
-          <img class="book-cov" src="https://egkhor.com.my/home/wp-content/uploads/2025/12/Smart-Character-Edu-.png" alt="EN Depan">
-          <img class="book-cov" src="https://egkhor.com.my/home/wp-content/uploads/2026/01/Untitled-9.png" alt="EN Belakang">
-        </div>
-        <div class="book-info">
-          <span class="book-lang bl-en">🇬🇧 English</span>
-          <div class="book-title">EGK AI Adventure</div>
-          <div class="book-isbn">eISBN: 978-629-94581-5-9</div>
-          <a href="https://anyflip.com/yerpd/dijp/" class="btn btn-gold" style="font-size:0.88rem;padding:10px 22px">Preview📚</a>
-          <a href="https://apps.apple.com/my/app/egk-bookstore/id6758967869" class="btn btn-gold" style="font-size:0.88rem;padding:10px 22px">EGK BookStore 🛒</a>
-          <a href="https://buy.stripe.com/8x200igQ91WRend3IN6Zy05" class="btn btn-gold" style="font-size:0.88rem;padding:10px 22px">Order Now 🛒📚</a>
-
-          <ul class="book-features">
-            <li>English edition — for national-type and international schools</li>
-            <li>Free AR app EGK AIAdv AR included</li>
-            <li>6 chapters for Year 1–6 KSSR</li>
-            <li>Aida speaks in English</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- ZH -->
-    <div style="margin-top:20px;" class="reveal">
-      <div class="book-card">
-        <div style="display:flex;gap:0;align-items:stretch;">
-          <div class="book-covers-row" style="flex:0 0 auto;">
-            <img class="book-cov" src="https://egkhor.com.my/home/wp-content/uploads/2025/12/EGK-AI-探险之旅.png" alt="ZH Depan">
-            <img class="book-cov" src="https://egkhor.com.my/home/wp-content/uploads/2026/01/backcoverAiCh.png" alt="ZH Belakang">
-          </div>
-          <div class="book-info" style="flex:1;">
-            <span class="book-lang bl-zh">🀄 中文版</span>
-            <div class="book-title">人工智能探险 · EGK AI 探险之旅</div>
-            <div class="book-isbn">eISBN: 978-629-94581-8-0</div>
-            <a href="https://anyflip.com/yerpd/nlae/" class="btn btn-gold" style="font-size:0.88rem;padding:10px 22px">Preview📚</a>
-            <a href="https://apps.apple.com/my/app/egk-bookstore/id6758967869" class="btn btn-gold" style="font-size:0.88rem;padding:10px 22px">EGK BookStore 🛒</a>
-            <a href="https://buy.stripe.com/eVqdR857rcBv4MD4MR6Zy06" class="btn btn-gold" style="font-size:0.88rem;padding:10px 22px">Order Now 🛒📚</a>
-            <ul class="book-features">
-              <li>Edisi Mandarin — sesuai untuk sekolah jenis kebangsaan Cina (SJKC)</li>
-              <li>Aplikasi AR percuma EGK AIAdv AR disertakan</li>
-              <li>6 bab untuk Tahun 1–6 KSSR</li>
-              <li>Maskot Aida bertutur dalam Mandarin</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Aida info -->
-    <div style="margin-top:28px;display:flex;gap:20px;align-items:center;background:linear-gradient(135deg,#EFF6FF,#EEF2FF);border-radius:14px;padding:20px 24px;border:1px solid #BFDBFE;" class="reveal">
-      <img src="https://egkhor.com.my/home/wp-content/uploads/2026/04/aida.png" alt="Aida" style="width:80px;animation:float 4s ease-in-out infinite;filter:drop-shadow(0 8px 20px rgba(21,101,192,.3));">
-      <div>
-        <div style="font-weight:800;font-size:.95rem;color:var(--navy);margin-bottom:6px;">🤖 Kenali Aida — Rakan AI Malaysia</div>
-        <div style="font-size:.82rem;color:var(--muted);line-height:1.7;">
-          Aida ialah maskot AI yang dicipta khas untuk siri buku ini. Melalui aplikasi AR,
-          Aida keluar dari halaman buku dalam 3D sebenar, bercakap dalam bahasa pelajar,
-          bermain Simon Kata, meneka apa yang pelajar fikirkan dengan 20 Soalan,
-          melukis seni AI, dan memberikan sijil emas pada majlis graduasi Tahun 6.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="section-divider"></div>
-
-<!-- ─── SECTION 5: SLAID POWERPOINT ─── -->
-<section id="ppt" class="formal-section">
-  <div class="section-wrap">
-    <div class="sec-num reveal">05 · Slaid Pembentangan</div>
-    <h2 class="sec-heading reveal">Bahan Pembentangan Lengkap</h2>
-    <p class="sec-lead reveal">
-      Slaid PowerPoint penuh boleh dilihat dan dimuat turun di bawah. Pembentangan ini merangkumi
-      keseluruhan silibus EGK AI Adventure, analisis penjajaran KSSR, dan cadangan pelaksanaan
-      untuk KPM.
-    </p>
-
-    <div class="ppt-wrap reveal">
-      <div class="ppt-header">
-        <span>📊</span>
-        <span>EGK AI Adventure — Pembentangan KPM 2026</span>
-        <a href="https://docs.google.com/presentation/d/19H6H1GnbDRixi9BKraBMDIlJsVNy630M/edit?usp=share_link&ouid=113107407730699067925&rtpof=true&sd=true" target="_blank" style="margin-left:auto;color:#7DD3FC;font-size:.72rem;font-weight:600;text-decoration:none;">Buka dalam Google Slides ↗</a>
-      </div>
-      <iframe
-        class="ppt-embed"
-        src="https://docs.google.com/presentation/d/19H6H1GnbDRixi9BKraBMDIlJsVNy630M/edit?usp=share_link&ouid=113107407730699067925&rtpof=true&sd=true"
-        frameborder="0"
-        allowfullscreen="true"
-        mozallowfullscreen="true"
-        webkitallowfullscreen="true">
-      </iframe>
-    </div>
-    <p class="ppt-note reveal">
-      Klik kiri pada slaid untuk navigasi · Gunakan ikon skrin penuh di penjuru kanan bawah untuk paparan pembentangan penuh ·
-      <a href="https://docs.google.com/presentation/d/1Mdb3JdsQsPmen20b6BjclzPqyas_6LZa/export/pptx" style="color:var(--royal);font-weight:700;">Muat Turun PPTX ↓</a>
-    </p>
-  </div>
-</section>
-<div class="section-divider"></div>
-
-<!-- ─── SECTION 6: DEMO VIDEO ─── -->
-<section id="demo" class="formal-section alt">
-  <div class="section-wrap">
-    <div class="sec-num reveal">06 · Demonstrasi Produk</div>
-    <h2 class="sec-heading reveal">Video Demonstrasi<br>Aplikasi EGK AIAdv AR</h2>
-    <p class="sec-lead reveal">
-      Tonton demonstrasi langsung bagaimana aplikasi EGK AIAdv AR berfungsi — Aida keluar dalam
-      3D Augmented Reality, bermain Simon Kata, dan membimbing pelajar melalui modul pembelajaran AI.
-      Tersedia untuk iOS dan Android.
-    </p>
-
-    <div class="video-section reveal">
-      <div class="video-tabs">
-        <div class="vtab active" onclick="switchVideo('ios',this)">🍎 Demo iOS</div>
-        <div class="vtab" onclick="switchVideo('android',this)">🤖 Demo Android</div>
-      </div>
-
-      <div id="vp-ios" class="video-panel active">
-        <div class="video-container">
-          <!-- Google Drive embed for iOS video -->
-          <iframe
-            src="https://drive.google.com/file/d/1nAZZqocUNGGDOOuX4XiwRcDbz_6KvX7B/preview"
-            allow="autoplay; fullscreen"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-caption">🍎 Demonstrasi EGK AIAdv AR — Versi iOS · Sila klik ▶ untuk main video</div>
-      </div>
-
-      <div id="vp-android" class="video-panel">
-        <div class="video-container">
-          <!-- Google Drive embed for Android video -->
-          <iframe
-            src="https://drive.google.com/file/d/1BO4AigEeKCDUhnrfhhBQuPQqWELkoXWZ/preview"
-            allow="autoplay; fullscreen"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-caption">🤖 Demonstrasi EGK AIAdv AR — Versi Android · Sila klik ▶ untuk main video</div>
-      </div>
-    </div>
-
-    <div class="three-col" style="margin-top:28px;">
-      <div class="info-card reveal">
-        <div class="info-card-icon">🥽</div>
-        <div class="info-card-title">AR 3D Sebenar</div>
-        <div class="info-card-body">Aida keluar dari halaman buku dan berdiri di hadapan pelajar dalam 3D. Tiada keperluan cermin mata khas.</div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-card-icon">🎮</div>
-        <div class="info-card-title">Permainan Interaktif</div>
-        <div class="info-card-body">Simon Kata, 20 Soalan, Padanan Kerjaya, Penjana Seni AI bertema Malaysia — semuanya dalam aplikasi percuma.</div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-card-icon">🎓</div>
-        <div class="info-card-title">Majlis Graduasi AR</div>
-        <div class="info-card-body">Tamat Tahun 6? Aida memakai topi graduasi, serahkan sijil emas, lancarkan bunga api dalam AR. Momen yang tidak terlupakan!</div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="section-divider"></div>
-
-<!-- ─── SECTION 7: APLIKASI ─── -->
-<section id="app" class="formal-section dark">
-  <div class="section-wrap">
-    <div class="sec-num reveal" style="color:#D4A017;">07 · Aplikasi</div>
-    <h2 class="sec-heading reveal">EGK AIAdv AR App<br><span style="color:#7DD3FC;">Percuma untuk Muat Turun</span></h2>
-    <p class="sec-lead reveal">
-      Aplikasi EGK AIAdv AR adalah percuma dan tersedia untuk iOS dan Android.
-      Setiap pembelian buku mendapat kod promosi untuk akses penuh semua modul AR.
-    </p>
-
-    <div class="app-row reveal">
-      <img class="app-icon-sm" src="https://egkhor.com.my/home/wp-content/uploads/2025/12/egkaiadv.png" alt="App Icon">
-      <div>
-        <div style="font-weight:800;font-size:.95rem;color:white;margin-bottom:6px;">EGK AIAdv AR</div>
-        <div style="font-size:.8rem;color:rgba(255,255,255,.6);margin-bottom:10px;">Percuma · iOS & Android · Bahasa Melayu + Inggeris + Mandarin</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="https://apps.apple.com/my/app/egk-aiadv-ar/id6756287562" target="_blank" class="app-dl-btn">
-            🍎 App Store (iOS)
-          </a>
-          <a href="https://buy.stripe.com/8x26oGgQ97hb3Iz5QV6Zy0c" target="_blank" class="app-dl-btn" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);">
-            🤖 Android
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="two-col" style="margin-top:24px;">
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px;" class="reveal">
-        <div style="font-weight:800;font-size:.85rem;color:#7DD3FC;margin-bottom:10px;">📱 Ciri-Ciri Aplikasi</div>
-        <div style="font-size:.8rem;color:rgba(255,255,255,.7);line-height:2;">
-          ✓ AR 3D — Aida muncul dalam dunia sebenar<br>
-          ✓ Permainan Simon Kata interaktif<br>
-          ✓ 20 Soalan — Aida meneka pemikiran anda<br>
-          ✓ Penjana Seni AI bertema Malaysia<br>
-          ✓ Padanan Kerjaya AI masa hadapan<br>
-          ✓ Majlis Graduasi dengan sijil emas<br>
-          ✓ Bahasa Melayu + Inggeris + Mandarin
-        </div>
-      </div>
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px;" class="reveal">
-        <div style="font-weight:800;font-size:.85rem;color:#7DD3FC;margin-bottom:10px;">🔒 Keselamatan & Privasi</div>
-        <div style="font-size:.8rem;color:rgba(255,255,255,.7);line-height:2;">
-          ✓ Tiada iklan dalam aplikasi<br>
-          ✓ Tiada pengumpulan data peribadi pelajar<br>
-          ✓ Sesuai untuk semua umur (6–12 tahun)<br>
-          ✓ Dibangunkan atas platform selamat Apple<br>
-          ✓ Kandungan disahkan selaras DSKP KPM<br>
-          ✓ Had masa skrin 30 minit/hari disyorkan
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="section-divider"></div>
-
-<!-- ─── SECTION 8: SOKONGAN KPM ─── -->
-<section id="sokongan" class="formal-section">
-  <div class="section-wrap">
-    <div class="sec-num reveal">08 · Penjajaran & Pengiktirafan</div>
-    <h2 class="sec-heading reveal">Penjajaran dengan Dasar<br>Kementerian Pendidikan Malaysia</h2>
-    <p class="sec-lead reveal">
-      EGK AI Adventure direka secara teliti untuk memenuhi keperluan dasar dan
-      program KPM yang sedia ada, memudahkan integrasi tanpa gangguan ke dalam
-      sistem persekolahan Malaysia.
-    </p>
-
-    <table class="req-table reveal">
-      <thead>
-        <tr>
-          <th>Dasar / Program KPM</th>
-          <th>Penjajaran EGK AI Adventure</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Pelan Pembangunan Pendidikan Malaysia 2013–2025 (Anjakan 4 & 7)</td>
-          <td>Literasi digital AI bermula Tahun 1, selaras transformasi pedagogi abad ke-21</td>
-          <td><span class="badge-pill bp-yes">Selaras Penuh</span></td>
-        </tr>
-        <tr>
-          <td>Pelan Induk AI Kebangsaan 2021–2025</td>
-          <td>Memperkenalkan AI di peringkat sekolah rendah — sokongan konkrit ekosistem AI Malaysia</td>
-          <td><span class="badge-pill bp-yes">Selaras Penuh</span></td>
-        </tr>
-        <tr>
-          <td>KSSR Semakan 2017 (Tahun 1–6)</td>
-          <td>Setiap bab dipetakan terus kepada DSKP Sains, Matematik dan DST</td>
-          <td><span class="badge-pill bp-yes">Disahkan</span></td>
-        </tr>
-        <tr>
-          <td>UNESCO AI Competency Framework for Students (2022)</td>
-          <td>4 kompetensi teras UNESCO dilaksanakan sepenuhnya dalam 6 tahun kurikulum</td>
-          <td><span class="badge-pill bp-yes">Selaras Penuh</span></td>
-        </tr>
-        <tr>
-          <td>STEM Action Plan 2024–2026 (KPM)</td>
-          <td>Memperkukuh STEM dengan AI sebagai literasi baru — menyokong agenda STEM negara</td>
-          <td><span class="badge-pill bp-ready">Sedia Dilaksana</span></td>
-        </tr>
-        <tr>
-          <td>Malaysia Digital Economy Blueprint (Pelan Ekonomi Digital)</td>
-          <td>Menyediakan generasi mudah Malaysia untuk ekonomi digital dan Revolusi Industri 4.0</td>
-          <td><span class="badge-pill bp-ready">Sedia Dilaksana</span></td>
-        </tr>
-        <tr>
-          <td>Dasar Pendidikan Digital KPM</td>
-          <td>Aplikasi AR percuma, tanpa peralatan mahal — inklusif untuk sekolah luar bandar</td>
-          <td><span class="badge-pill bp-yes">Selaras Penuh</span></td>
-        </tr>
-        <tr>
-          <td>Kurikulum AI untuk Guru Sekolah Menengah UNESCO 2024 (pf0000391104)</td>
-          <td>Silibus rendah EGK direka sebagai pra-syarat vertikal untuk kurikulum UNESCO menengah</td>
-          <td><span class="badge-pill bp-review">Dalam Semakan</span></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="endorse-box reveal" style="margin-top:28px;">
-      <div class="endorse-quote">
-        "Kementerian Pendidikan Malaysia, melalui Jawatankuasa Penilai, mengesyorkan bahawa produk EGK
-        adalah sesuai untuk dipertimbangkan bagi pelaksanaan projek rintis. Aplikasi EGK Anti-Bully
-        Careline turut dinilai sebagai satu produk yang mempunyai potensi yang sangat baik serta
-        amat berguna (very useful product)."
-      </div>
-      <div class="endorse-author">Kementerian Pendidikan Malaysia</div>
-      <div class="endorse-role">Jawatankuasa Penilaian Produk Pendidikan, KPM</div>
-    </div>
-  </div>
-</section>
-<div class="section-divider"></div>
-
-<!-- ─── SECTION 9: KATEGORI & CIRI ─── -->
-<section id="kategori" class="formal-section">
-  <div class="section-wrap">
-    <div class="sec-num reveal">9 · Kategori, Jenis &amp; Ciri-Ciri Produk</div>
-    <h2 class="sec-heading reveal">Apakah Kategori, Jenis<br>dan Ciri-Ciri Produk Ini?</h2>
-    <p class="sec-lead reveal">EGK AI Adventure adalah pakej pendidikan bersepadu (hybrid) yang menggabungkan buku aktiviti fizikal dengan aplikasi mudah alih berteknologi AR — direka khusus untuk murid sekolah rendah Malaysia.</p>
-
-    <table class="req-table reveal">
-      <thead><tr><th style="width:220px;">Aspek</th><th>Butiran Ringkas</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Kategori</strong></td><td><span class="badge-pill bp-ready" style="margin-right:6px;">Pendidikan Digital (EdTech)</span><span class="badge-pill bp-yes" style="margin-right:6px;">Pendidikan Kecerdasan Buatan (AI)</span><span class="badge-pill bp-review">Teknologi Augmented Reality (AR)</span></td></tr>
-        <tr><td><strong>Jenis Produk</strong></td><td>Pakej pendidikan bersepadu (Hybrid):<br>1. Buku aktiviti fizikal <em>Pengembaraan AI / AI Adventure</em><br>2. Aplikasi mudah alih <em>EGK AIAdv AR</em></td></tr>
-        <tr><td><strong>Sasaran Pengguna</strong></td><td>Murid sekolah rendah Tahun 1 – Tahun 6 (umur 6–12 tahun)</td></tr>
-        <tr><td><strong>Platform</strong></td><td>Buku bercetak + Aplikasi iOS &amp; Android</td></tr>
-        <tr><td><strong>Bahasa</strong></td><td>🇲🇾 Bahasa Melayu &nbsp;|&nbsp; 🇬🇧 Bahasa Inggeris &nbsp;|&nbsp; 🀄 Bahasa Cina</td></tr>
-        <tr><td><strong>Pendekatan Pembelajaran</strong></td><td>Pembelajaran berperingkat, interaktif dan berasaskan pengalaman (<em>experiential learning</em>)</td></tr>
-        <tr><td><strong>Elemen Teknologi</strong></td><td><span class="badge-pill bp-ready" style="margin-right:4px;">Realiti Terimbuh / AR 3D</span><span class="badge-pill bp-yes" style="margin-right:4px;">Interaksi Suara &amp; Sentuhan</span><span class="badge-pill bp-review">Imbas QR dari Buku</span></td></tr>
-        <tr><td><strong>Kandungan Utama</strong></td><td>Pengenalan AI, corak &amp; ramalan, latihan AI, seni AI, kerjaya masa hadapan, etika AI</td></tr>
-        <tr><td><strong>Penjajaran Kurikulum</strong></td><td>Selaras dengan KSSR, Kerangka Kompetensi AI UNESCO, Pelan Pembangunan Pendidikan Malaysia</td></tr>
-        <tr><td><strong>Ciri Keselamatan</strong></td><td><span class="badge-pill bp-yes" style="margin-right:4px;">Tiada Pengumpulan Data</span><span class="badge-pill bp-yes" style="margin-right:4px;">Tiada Iklan</span><span class="badge-pill bp-yes">Tiada Pembelian Dalam Aplikasi</span></td></tr>
-        <tr><td><strong>Nilai &amp; Etika</strong></td><td>Penekanan kepada keadilan, privasi, keselamatan, dan kawalan manusia terhadap AI</td></tr>
-        <tr><td><strong>Kandungan Tempatan</strong></td><td>Ikon &amp; budaya Malaysia — Durian, Batik, Wau Bulan, Menara Petronas, Harimau Malaya, dll.</td></tr>
-        <tr><td><strong>Kegunaan</strong></td><td>Boleh digunakan di sekolah, di rumah, secara individu atau berkumpulan</td></tr>
-      </tbody>
-    </table>
-
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;">
-      <div class="info-card reveal" style="border-top-color:#1042B0;">
-        <div class="info-card-icon">📚</div>
-        <div class="info-card-title">Jenis 1: Buku Aktiviti Fizikal</div>
-        <div class="info-card-body">Buku <em>Pengembaraan AI / AI Adventure</em> — 6 bab untuk Tahun 1–6, aktiviti bercetak, QR kod, lembaran kerja, lencana dan sijil. Tersedia dalam 3 bahasa.</div>
-      </div>
-      <div class="info-card reveal" style="border-top-color:#D4A017;">
-        <div class="info-card-icon">📱</div>
-        <div class="info-card-title">Jenis 2: Aplikasi Mudah Alih AR</div>
-        <div class="info-card-body">Aplikasi <em>EGK AIAdv AR</em> — percuma untuk iOS &amp; Android. Imbas QR dalam buku, maskot Aida muncul dalam 3D AR, bermain permainan interaktif, dan memberikan sijil graduasi digital.</div>
-      </div>
-      <div class="info-card reveal" style="border-top-color:#166534;">
-        <div class="info-card-icon">🌐</div>
-        <div class="info-card-title">Platform Hybrid Bersepadu</div>
-        <div class="info-card-body">Gabungan buku fizikal + aplikasi digital — pengalaman pembelajaran yang tidak memerlukan peralatan mahal. Sesuai untuk semua sekolah termasuk kawasan luar bandar.</div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="section-divider"></div>
-
-<!-- ─── SECTION 10: SASARAN PENGGUNA ─── -->
-<section id="sasaran" class="formal-section alt">
-  <div class="section-wrap">
-    <div class="sec-num reveal">10 · Sasaran Pengguna</div>
-    <h2 class="sec-heading reveal">Siapakah Sasaran Pengguna<br>dalam Institusi Pendidikan KPM?</h2>
-    <p class="sec-lead reveal">Produk ini direka untuk digunakan bersama oleh tiga kumpulan pengguna utama dalam ekosistem pendidikan KPM — murid sebagai pengguna utama, guru sebagai fasilitator, dan ibu bapa / penjaga sebagai penyokong pembelajaran di rumah.</p>
-
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:24px;">
-      <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(10,31,92,.07);" class="reveal">
-        <div style="background:linear-gradient(135deg,#1042B0,#1565C0);padding:18px 18px 14px;text-align:center;">
-          <div style="font-size:2.4rem;margin-bottom:8px;">👧🏫</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1rem;color:white;font-weight:700;">Murid</div>
-          <div style="font-size:.72rem;color:rgba(255,255,255,.7);margin-top:2px;letter-spacing:.8px;text-transform:uppercase;">Pengguna Utama</div>
-        </div>
-        <div style="padding:16px 18px;">
-          <div style="display:inline-block;background:#DBEAFE;color:#1E40AF;font-size:.7rem;font-weight:800;padding:2px 10px;border-radius:50px;margin-bottom:10px;">TAHUN 1–6 · UMUR 6–12</div>
-          <ul style="list-style:none;font-size:.8rem;color:var(--muted);line-height:2.1;">
-            <li style="display:flex;gap:7px;"><span style="color:#1042B0;font-weight:700;">&#10003;</span> Pengguna utama buku aktiviti dan aplikasi AR</li>
-            <li style="display:flex;gap:7px;"><span style="color:#1042B0;font-weight:700;">&#10003;</span> Memahami konsep AI secara interaktif dan visual</li>
-            <li style="display:flex;gap:7px;"><span style="color:#1042B0;font-weight:700;">&#10003;</span> Belajar AI, etika, kreativiti &amp; pemikiran kritikal</li>
-            <li style="display:flex;gap:7px;"><span style="color:#1042B0;font-weight:700;">&#10003;</span> Melalui permainan, projek, AR dan refleksi</li>
-            <li style="display:flex;gap:7px;"><span style="color:#1042B0;font-weight:700;">&#10003;</span> Membuat janji etika AI dan sijil penjelajah</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(10,31,92,.07);" class="reveal">
-        <div style="background:linear-gradient(135deg,#166534,#16a34a);padding:18px 18px 14px;text-align:center;">
-          <div style="font-size:2.4rem;margin-bottom:8px;">&#128104;&#8205;&#127979;&#128203;</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1rem;color:white;font-weight:700;">Guru</div>
-          <div style="font-size:.72rem;color:rgba(255,255,255,.7);margin-top:2px;letter-spacing:.8px;text-transform:uppercase;">Fasilitator Pembelajaran</div>
-        </div>
-        <div style="padding:16px 18px;">
-          <div style="display:inline-block;background:#DCFCE7;color:#166534;font-size:.7rem;font-weight:800;padding:2px 10px;border-radius:50px;margin-bottom:10px;">TIADA KEPAKARAN TEKNIKAL AI DIPERLUKAN</div>
-          <ul style="list-style:none;font-size:.8rem;color:var(--muted);line-height:2.1;">
-            <li style="display:flex;gap:7px;"><span style="color:#166534;font-weight:700;">&#10003;</span> Menggunakan buku sebagai bahan bantu mengajar selaras KSSR</li>
-            <li style="display:flex;gap:7px;"><span style="color:#166534;font-weight:700;">&#10003;</span> Membimbing aktiviti kelas, perbincangan &amp; refleksi etika AI</li>
-            <li style="display:flex;gap:7px;"><span style="color:#166534;font-weight:700;">&#10003;</span> Panduan guru lengkap disertakan dalam buku</li>
-            <li style="display:flex;gap:7px;"><span style="color:#166534;font-weight:700;">&#10003;</span> Rancangan pengajaran mingguan Tahun 1–Tahun 6</li>
-            <li style="display:flex;gap:7px;"><span style="color:#166534;font-weight:700;">&#10003;</span> Tidak memerlukan kepakaran teknikal AI yang tinggi</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(10,31,92,.07);" class="reveal">
-        <div style="background:linear-gradient(135deg,#92400E,#B45309);padding:18px 18px 14px;text-align:center;">
-          <div style="font-size:2.4rem;margin-bottom:8px;">&#128106;&#127968;</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1rem;color:white;font-weight:700;">Ibu Bapa / Penjaga</div>
-          <div style="font-size:.72rem;color:rgba(255,255,255,.7);margin-top:2px;letter-spacing:.8px;text-transform:uppercase;">Penyokong Pembelajaran di Rumah</div>
-        </div>
-        <div style="padding:16px 18px;">
-          <div style="display:inline-block;background:#FEF9C3;color:#854D0E;font-size:.7rem;font-weight:800;padding:2px 10px;border-radius:50px;margin-bottom:10px;">PEMBELAJARAN BERTERUSAN DI RUMAH</div>
-          <ul style="list-style:none;font-size:.8rem;color:var(--muted);line-height:2.1;">
-            <li style="display:flex;gap:7px;"><span style="color:#92400E;font-weight:700;">&#10003;</span> Membantu anak menggunakan aplikasi AR dengan selamat</li>
-            <li style="display:flex;gap:7px;"><span style="color:#92400E;font-weight:700;">&#10003;</span> Memantau penggunaan AI dan peranti digital</li>
-            <li style="display:flex;gap:7px;"><span style="color:#92400E;font-weight:700;">&#10003;</span> Menggalakkan perbincangan nilai &amp; etika AI di rumah</li>
-            <li style="display:flex;gap:7px;"><span style="color:#92400E;font-weight:700;">&#10003;</span> Panduan ibu bapa untuk 10 modul terbaik di rumah</li>
-            <li style="display:flex;gap:7px;"><span style="color:#92400E;font-weight:700;">&#10003;</span> Aplikasi AR 100% selamat — tiada iklan, tiada data</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:24px;background:linear-gradient(135deg,#EFF6FF,#EEF2FF);border:1px solid #BFDBFE;border-radius:12px;padding:20px 24px;border-left:4px solid #1042B0;" class="reveal">
-      <div style="font-weight:800;font-size:.9rem;color:var(--navy);margin-bottom:8px;">&#128221; Rumusan Sasaran Pengguna</div>
-      <div style="font-size:.85rem;color:var(--muted);line-height:1.8;">Produk ini direka untuk digunakan bersama oleh murid, guru dan ibu bapa, dengan <strong style="color:var(--navy);">murid sebagai pengguna utama</strong>, <strong style="color:var(--navy);">guru sebagai pembimbing pembelajaran di sekolah</strong>, dan <strong style="color:var(--navy);">ibu bapa sebagai penyokong serta pemantau pembelajaran di rumah</strong>. Ketiga-tiga kumpulan ini bekerja bersama-sama untuk memastikan pengalaman pembelajaran AI yang selamat, bermakna dan berkesan.</div>
-    </div>
-  </div>
-</section>
-<div class="section-divider"></div>
-
-<!-- ─── SECTION 11: KOS & PEMBIAYAAN ─── -->
-<section id="kos" class="formal-section">
-  <div class="section-wrap">
-    <div class="sec-num reveal">11 · Kos &amp; Pembiayaan</div>
-    <h2 class="sec-heading reveal">Berapakah Kos?<br>Siapa yang Akan Membiayainya?</h2>
-    <p class="sec-lead reveal">Kos terbahagi kepada kos perolehan awal (sekali sahaja) dan kos penyelenggaraan tahunan. Penanggung kos yang dicadangkan untuk perolehan pukal ini adalah <strong>Kementerian Pendidikan Malaysia (KPM)</strong>, disalurkan melalui dana perolehan teknologi pendidikan dan inovasi KPM.</p>
- 
-    <div style="background:linear-gradient(135deg,#040F2E,#0A2050);border-radius:12px;padding:20px 24px;margin-bottom:28px;display:flex;align-items:center;gap:16px;" class="reveal">
-      <div style="font-size:2.5rem;flex-shrink:0;">&#127963;</div>
-      <div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:white;margin-bottom:4px;">Penanggung Kos yang Dicadangkan</div>
-        <div style="font-weight:800;font-size:1rem;color:#D4A017;margin-bottom:4px;">Kementerian Pendidikan Malaysia (KPM)</div>
-        <div style="font-size:.8rem;color:rgba(255,255,255,.65);">Disalurkan melalui dana perolehan teknologi pendidikan dan inovasi KPM</div>
-      </div>
-    </div>
- 
-    <table class="req-table reveal">
-      <thead>
-        <tr><th>Perkara</th><th style="text-align:right;min-width:150px;">Harga / Kos</th><th>Pengiraan / Catatan</th></tr>
-      </thead>
-      <tbody>
-        <tr style="background:#EFF6FF;"><td colspan="3" style="font-weight:800;color:var(--navy);font-size:.8rem;letter-spacing:.5px;padding:10px 14px;">&#128309; KOS PEROLEHAN AWAL (SEKALI SAHAJA)</td></tr>
-        <tr>
-          <td><strong>Kos Perolehan Lesen Pukal</strong><br><span style="font-size:.76rem;color:var(--muted);">Lesen Aplikasi EGK AIAdv AR (Akses Penuh Tahun 1–6)</span></td>
-          <td style="text-align:right;"><strong style="font-size:1.1rem;color:var(--navy);">RM 30</strong><br><span style="font-size:.72rem;color:var(--muted);">per peranti</span></td>
-          <td style="font-size:.8rem;color:var(--muted);">Lesen aplikasi EGK AIAdv AR (akses penuh Tahun 1–6)<br>Dibayar <em>sekali</em> bagi setiap peranti murid / sekolah</td>
-        </tr>
-        <tr>
-          <td><strong>Kos Latihan Nasional</strong><br><span style="font-size:.76rem;color:var(--muted);">Program Latihan Guru Utama Peringkat Nasional</span></td>
-          <td style="text-align:right;"><strong style="font-size:1.1rem;color:var(--navy);">RM 150,000</strong><br><span style="font-size:.72rem;color:var(--muted);">kos tetap</span></td>
-          <td style="font-size:.8rem;color:var(--muted);">Latihan penggunaan buku &amp; aplikasi<br>Modul pedagogi AI &amp; etika<br>Boleh melatih jurulatih negeri (<em>train-the-trainer</em>)</td>
-        </tr>
-        <tr style="background:#F0FDF4;"><td colspan="3" style="font-weight:800;color:#166534;font-size:.8rem;letter-spacing:.5px;padding:10px 14px;">&#128994; KOS PELESENAN TAHUNAN (BERTERUSAN)</td></tr>
-        <tr>
-          <td><strong>Kos Pelesenan Tahunan</strong><br><span style="font-size:.76rem;color:var(--muted);">Penyelenggaraan &amp; Kemas Kini Berterusan</span></td>
-          <td style="text-align:right;"><strong style="font-size:1.1rem;color:var(--navy);">RM 10</strong><br><span style="font-size:.72rem;color:var(--muted);">per peranti / tahun</span></td>
-          <td style="font-size:.8rem;color:var(--muted);">Penyelenggaraan kandungan<br>Kemas kini AR &amp; AI<br>Sokongan teknikal<br>Penambahbaikan selaras dasar KPM &amp; UNESCO</td>
-        </tr>
-        <tr style="background:#FFFBEB;"><td colspan="3" style="font-weight:800;color:#92400E;font-size:.8rem;letter-spacing:.5px;padding:10px 14px;">&#128218; KOS BUKU FIZIKAL (BERASINGAN)</td></tr>
-        <tr>
-          <td><strong>Kos Buku (Hak Cipta &amp; Pencetakan)</strong><br><span style="font-size:.76rem;color:var(--muted);">Buku Fizikal Berhak Cipta EGK</span></td>
-          <td style="text-align:right;"><strong style="font-size:1.1rem;color:var(--navy);">Mengikut Bilangan</strong><br><span style="font-size:.72rem;color:var(--muted);">boleh dirunding</span></td>
-          <td style="font-size:.8rem;color:var(--muted);">Kos cetakan boleh dirunding secara pukal<br>Hak cipta kekal milik EGK<br>Tersedia dalam BM, Inggeris &amp; Mandarin</td>
-        </tr>
-      </tbody>
-    </table>
- 
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:24px;">
-      <div style="background:linear-gradient(135deg,var(--navy),#0D2560);border-radius:12px;padding:20px;text-align:center;color:white;" class="reveal">
-        <div style="font-size:.72rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Jumlah Kos Tahun Pertama</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#D4A017;font-weight:800;">RM 190,000</div>
-        <div style="font-size:.74rem;color:rgba(255,255,255,.6);margin-top:4px;">Bagi 1,000 peranti</div>
-        <div style="font-size:.7rem;color:rgba(255,255,255,.45);margin-top:3px;">Termasuk lesen pukal + latihan nasional</div>
-      </div>
-      <div style="background:linear-gradient(135deg,#166534,#16a34a);border-radius:12px;padding:20px;text-align:center;color:white;" class="reveal">
-        <div style="font-size:.72rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Huraian Kos Keseluruhan</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#86EFAC;font-weight:800;">RM 190,000</div>
-        <div style="font-size:.74rem;color:rgba(255,255,255,.7);margin-top:4px;">RM 30X1,000 lesen + RM 150,000 latihan + RM 10x1,000 kemas</div>
-        <div style="font-size:.7rem;color:rgba(255,255,255,.55);margin-top:3px;">Tidak termasuk kos buku fizikal</div>
-      </div>
-      <div style="background:linear-gradient(135deg,#92400E,#B45309);border-radius:12px;padding:20px;text-align:center;color:white;" class="reveal">
-        <div style="font-size:.72rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Kos Tahunan Berterusan</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#FDE68A;font-weight:800;">RM 10</div>
-        <div style="font-size:.74rem;color:rgba(255,255,255,.7);margin-top:4px;">per peranti / tahun</div>
-        <div style="font-size:.7rem;color:rgba(255,255,255,.55);margin-top:3px;">Selepas tahun pertama</div>
-      </div>
-    </div>
- 
-    <div style="margin-top:24px;background:linear-gradient(135deg,#FAFAF7,#F5F5EE);border:1px solid #E8D5A3;border-radius:12px;padding:22px 24px;border-left:4px solid #D4A017;" class="reveal">
-      <div style="font-weight:800;font-size:.9rem;color:var(--navy);margin-bottom:12px;">&#128161; Nilai untuk Wang (Value for Money)</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:.82rem;color:var(--muted);line-height:1.9;">
-        <div>
-          <strong style="color:var(--navy);">&#10003; Buku bercetak + Aplikasi AR percuma</strong> dalam satu pakej<br>
-          <strong style="color:var(--navy);">&#10003; Liputan penuh 6 tahun KSSR</strong> — Tahun 1 hingga Tahun 6<br>
-          <strong style="color:var(--navy);">&#10003; Tiga bahasa</strong> — BM, Inggeris, Mandarin<br>
-          <strong style="color:var(--navy);">&#10003; Tiada peralatan mahal</strong> — hanya buku + telefon
-        </div>
-        <div>
-          <strong style="color:var(--navy);">&#10003; Kemas kini kandungan</strong> selaras perubahan dasar KPM &amp; UNESCO<br>
-          <strong style="color:var(--navy);">&#10003; Sokongan teknikal</strong> berterusan sepanjang tempoh lesen<br>
-          <strong style="color:var(--navy);">&#10003; Latihan guru nasional</strong> termasuk dalam kos tahun pertama<br>
-          <strong style="color:var(--navy);">&#10003; Selamat sepenuhnya</strong> — tiada data, tiada iklan, tiada bayaran tambahan
-        </div>
-      </div>
-    </div>
- 
-    <div style="margin-top:16px;background:#FFF1F2;border:1px solid #FECDD3;border-radius:8px;padding:12px 16px;font-size:.78rem;color:#9F1239;" class="reveal">
-      <strong>&#128204; Nota:</strong> Kos di atas adalah anggaran untuk 1,000 unit. Kos sebenar akan disesuaikan mengikut bilangan murid, sekolah dan negeri yang terlibat dalam projek rintis. EGK bersedia untuk berbincang mengenai pakej perolehan pukal yang lebih baik untuk skala nasional.
-    </div>
-  </div>
-</section>
-<div class="section-divider"></div>
-
-<!-- ─── SECTION 12: PERMOHONAN ─── -->
-<section id="permohonan" class="formal-section" style="background:linear-gradient(135deg,#040F2E,#0A2050);">
-  <div class="section-wrap">
-    <div class="sec-num reveal" style="color:#D4A017;">12 · Cadangan & Permohonan</div>
-    <h2 class="sec-heading reveal" style="color:white;">Permohonan Rasmi<br><span style="color:#7DD3FC;">kepada Pengarah Bahagian Sumber dan Teknologi Pendidikan</span></h2>
-    <p class="sec-lead reveal" style="color:rgba(255,255,255,.7);">
-      EGK dengan hormatnya memohon pertimbangan dan sokongan KPM dalam tiga bidang utama
-      untuk memperkasakan agenda literasi AI negara di peringkat sekolah rendah.
-    </p>
-
-    <div class="three-col">
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(212,160,23,.3);border-radius:14px;padding:24px 20px;border-top:3px solid var(--gold2);" class="reveal">
-        <div style="font-size:2rem;margin-bottom:10px;">🏫</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:white;margin-bottom:8px;">Projek Rintis Kebangsaan</div>
-        <div style="font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.7;">
-          Mohon sokongan KPM untuk melaksanakan projek rintis buku EGK AI Adventure di
-          sekolah-sekolah terpilih di semua negeri — sasaran 100 sekolah pada 2026.
-        </div>
-      </div>
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(212,160,23,.3);border-radius:14px;padding:24px 20px;border-top:3px solid var(--gold2);" class="reveal">
-        <div style="font-size:2rem;margin-bottom:10px;">📋</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:white;margin-bottom:8px;">Pendaftaran Bahan P&P</div>
-        <div style="font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.7;">
-          Mohon pertimbangan untuk mendaftarkan siri buku EGK AI Adventure sebagai
-          Bahan Pengajaran dan Pembelajaran (P&P) tambahan rasmi KPM bagi subjek
-          Sains Komputer dan STEM.
-        </div>
-      </div>
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(212,160,23,.3);border-radius:14px;padding:24px 20px;border-top:3px solid var(--gold2);" class="reveal">
-        <div style="font-size:2rem;margin-bottom:10px;">🤝</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:white;margin-bottom:8px;">Kerjasama MoU</div>
-        <div style="font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.7;">
-          Mohon peluang untuk menandatangani Memorandum Persefahaman (MoU) antara EGK dan
-          KPM bagi kerjasama jangka panjang dalam pembangunan kurikulum AI sekolah rendah Malaysia.
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:32px;background:rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.3);border-radius:12px;padding:24px 28px;" class="reveal">
-      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:white;margin-bottom:12px;">📬 Maklumat Hubungan</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:.82rem;color:rgba(255,255,255,.7);line-height:2;">
-        <div>
-          <strong style="color:#D4A017;">Pengarang & Pengasas:</strong><br>
-          Isaac Khor Eng Gian<br>
-          <strong style="color:#D4A017;">Syarikat:</strong><br>
-          EGK Microelectronic Solutions Group Sdn. Bhd.<br>
-          Co. Reg: 202501002992 (1604405-X)
-        </div>
-        <div>
-          <strong style="color:#D4A017;">Alamat Surat-menyurat:</strong><br>
-          PO Box 4, PO Bukit Mertajam,<br>
-          14000 Bukit Mertajam, Pulau Pinang, Malaysia<br>
-          <strong style="color:#D4A017;">Tel:</strong> +604-505 9700<br>
-          <strong style="color:#D4A017;">E-mel:</strong> <a href="mailto:admin@egkhor.com.my" style="color:#7DD3FC;">admin@egkhor.com.my</a><br>
-          <strong style="color:#D4A017;">Web:</strong> <a href="https://egkhor.com.my" target="_blank" style="color:#7DD3FC;">www.egkhor.com.my</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Signature block -->
-    <div style="margin-top:28px;text-align:center;" class="reveal">
-      <div style="font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:16px;">
-        Diserahkan dengan hormat kepada Kementerian Pendidikan Malaysia
-      </div>
-      <div style="display:inline-block;border-top:1px solid rgba(212,160,23,.5);padding-top:12px;min-width:200px;">
-        <div style="font-family:'Playfair Display',serif;font-size:1rem;color:white;">Isaac Khor Eng Gian</div>
-        <div style="font-size:.75rem;color:#D4A017;margin-top:2px;">Pengarang, Pengasas & Ketua Pegawai Eksekutif</div>
-        <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-top:2px;">EGK Microelectronic Solutions Group Sdn. Bhd.</div>
-        <div style="font-size:.7rem;color:rgba(255,255,255,.4);">Penang, Malaysia · April 2026</div>
-      </div>
-    </div>
+  <div class="scroll-indicator">
+    <div class="scroll-arrow"></div>
+    Scroll
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
-<div class="formal-footer">
-  <div class="ff-inner">
-    <div>
-      <div class="ff-title">EGK Microelectronic Solutions Group</div>
-      <div class="ff-line">
-        8, Lintang Beringin 8<br>
-        Diamond Valley Industrial Park<br>
-        11960 Batu Maung, Penang, Malaysia<br>
-        Co. Reg: 202501002992 (1604405-X)
-      </div>
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">8</span>
+      <div class="stat-label">Coating Products</div>
     </div>
-    <div>
-      <div class="ff-title">Produk EGK</div>
-      <div class="ff-line">
-        EGK AI Adventure (3 Bahasa)<br>
-        EGK Smart Character Education<br>
-        EGK STEM AR Education<br>
-        EGK Anti-Bully Careline<br>
-        EGK Humanitarian Resilience (EHRI)
-      </div>
+    <div class="stat-item">
+      <span class="stat-num">350+</span>
+      <div class="stat-label">Parts Coated</div>
     </div>
-    <div>
-      <div class="ff-title">Hubungi Kami</div>
-      <div class="ff-line">
-        📞 +604-505 9700<br>
-        ✉️ <a href="mailto:sales@egkhor.com.my" style="color:rgba(255,255,255,.5);">sales@egkhor.com.my</a><br>
-        🌐 <a href="https://egkhor.com.my" target="_blank" style="color:rgba(255,255,255,.5);">www.egkhor.com.my</a><br><br>
-        <a href="https://apps.apple.com/my/app/egk-aiadv-ar/id6756287562" target="_blank" style="color:#D4A017;font-weight:700;">🍎 Muat Turun Aplikasi iOS</a>
-      </div>
+    <div class="stat-item">
+      <span class="stat-num">20+</span>
+      <div class="stat-label">Years in Semicon</div>
     </div>
-  </div>
-  <div class="ff-bottom">
-    <span>© 2026 EGK Microelectronic Solutions Group Sdn. Bhd. · Semua hak terpelihara</span>
-    <span style="color:#D4A017;">📚 EGK AI Adventure — Memimpin Malaysia ke Era Digital</span>
+    <div class="stat-item">
+      <span class="stat-num">F500</span>
+      <div class="stat-label">Alumni Team</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">MOE</span>
+      <div class="stat-label">KPM Recognised</div>
+    </div>
   </div>
 </div>
 
-<!-- PASSWORD SCREEN -->
-<div id="password-screen">
-    <div class="password-box">
-        <h2>🔒 Pembentangan Sulit</h2>
-        <p class="subtitle-royal">Rahsia EGK & KPM</p>
-      
-        <p style="color:#5A6A82; margin-bottom:20px;">Masukkan kata laluan untuk melihat dokumen ini</p>
-        
-        <input type="password" id="password-input" placeholder="Kata Laluan" autocomplete="off">
-        <button id="submit-btn">Masuk</button>
-        <div id="error-msg"></div>
-    </div>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <strong>EGKAlphaT</strong> <span>Automotive IC ESD Coating</span>
+    <strong>◈</strong>
+    <strong>DiamondHard</strong> <span>Superior ESD Hardness</span>
+    <strong>◈</strong>
+    <strong>DiamondNeutral</strong> <span>Automotive IC Dissipative</span>
+    <strong>◈</strong>
+    <strong>EGKFusionDP</strong> <span>Thin ESD Coating</span>
+    <strong>◈</strong>
+    <strong>EGKAlphaD</strong> <span>Vaporized Antistatic</span>
+    <strong>◈</strong>
+    <strong>EGKAlphaP</strong> <span>Vaporized Antistatic</span>
+    <strong>◈</strong>
+    <strong>EGKMeT</strong> <span>Medical Device Coating</span>
+    <strong>◈</strong>
+    <strong>EGKMeAT</strong> <span>Orthopedic Implant Coating</span>
+    <strong>◈</strong>
+    <strong>ANSI/ESD S20.20 Compliant</strong>
+    <strong>◈</strong>
+    <strong>10⁵–10⁸ Ω Controlled Dissipation</strong>
+    <strong>◈</strong>
+    <!-- Duplicate for seamless loop -->
+    <strong>EGKAlphaT</strong> <span>Automotive IC ESD Coating</span>
+    <strong>◈</strong>
+    <strong>DiamondHard</strong> <span>Superior ESD Hardness</span>
+    <strong>◈</strong>
+    <strong>DiamondNeutral</strong> <span>Automotive IC Dissipative</span>
+    <strong>◈</strong>
+    <strong>EGKFusionDP</strong> <span>Thin ESD Coating</span>
+    <strong>◈</strong>
+    <strong>EGKAlphaD</strong> <span>Vaporized Antistatic</span>
+    <strong>◈</strong>
+    <strong>EGKAlphaP</strong> <span>Vaporized Antistatic</span>
+    <strong>◈</strong>
+    <strong>EGKMeT</strong> <span>Medical Device Coating</span>
+    <strong>◈</strong>
+    <strong>EGKMeAT</strong> <span>Orthopedic Implant Coating</span>
+    <strong>◈</strong>
+    <strong>ANSI/ESD S20.20 Compliant</strong>
+    <strong>◈</strong>
+    <strong>10⁵–10⁸ Ω Controlled Dissipation</strong>
+    <strong>◈</strong>
+  </div>
 </div>
 
-<script>
-    
-    // ==================== PASSWORD PROTECTION ====================
-    const correctPassword = "KpmEgk2026";
+<!-- RESISTIVITY SECTION -->
+<section class="resistivity">
+  <div class="container">
+    <div class="resistivity-grid">
+      <div>
+        <div class="section-label">Engineering Standard</div>
+        <h2 class="section-title">The 10⁵–10⁸ Ω<br>Controlled Zone</h2>
+        <p class="section-sub">
+          Too conductive and charge dissipates too fast — causing CDM failures. Too insulative and charge builds up silently on your tooling. EGK's entire semiconductor coating portfolio is engineered to land and <em>stay</em> in the controlled dissipation zone.
+        </p>
+        <div style="margin-top:1.5rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
+          <span style="font-family:'DM Mono',monospace;font-size:0.7rem;padding:0.3rem 0.7rem;border:1px solid var(--border2);border-radius:4px;color:var(--muted)">ANSI/ESD S20.20</span>
+          <span style="font-family:'DM Mono',monospace;font-size:0.7rem;padding:0.3rem 0.7rem;border:1px solid var(--border2);border-radius:4px;color:var(--muted)">IEC 61340-5-1</span>
+          <span style="font-family:'DM Mono',monospace;font-size:0.7rem;padding:0.3rem 0.7rem;border:1px solid var(--border2);border-radius:4px;color:var(--muted)">IATF 16949</span>
+        </div>
+      </div>
 
-    function checkPassword() {
-        const input = document.getElementById("password-input").value.trim();
-        const errorMsg = document.getElementById("error-msg");
-        const passwordScreen = document.getElementById("password-screen");
+      <div class="resist-chart">
+        <div style="font-size:0.7rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.5rem;font-family:'DM Mono',monospace;">Surface Resistivity Zones</div>
+        <div class="resist-zones">
+          <div class="zone zone-conductive">CONDUCTIVE<br>&lt; 10⁵ Ω/sq</div>
+          <div class="zone zone-dissipative">CONTROLLED<br>DISSIPATIVE<br>10⁵–10⁸ Ω/sq</div>
+          <div class="zone zone-insulative">INSULATIVE<br>&gt; 10¹¹ Ω/sq</div>
+        </div>
+        <div style="font-size:0.7rem;color:var(--muted);margin-bottom:0.8rem;font-family:'DM Mono',monospace;letter-spacing:0.05em;">ALL 6 SEMICONDUCTOR COATINGS IN TARGET ZONE:</div>
+        <div class="resist-row"><div class="resist-dot"></div><span class="resist-tag">EGKAlphaT</span><span class="resist-val">10⁵–10⁸ Ω/sq</span></div>
+        <div class="resist-row"><div class="resist-dot"></div><span class="resist-tag">DiamondHard</span><span class="resist-val">10⁵–10⁸ Ω/sq</span></div>
+        <div class="resist-row"><div class="resist-dot"></div><span class="resist-tag">DiamondNeutral</span><span class="resist-val">10⁵–10⁸ Ω/sq</span></div>
+        <div class="resist-row"><div class="resist-dot"></div><span class="resist-tag">EGKFusionDP</span><span class="resist-val">10⁵–10⁸ Ω/sq</span></div>
+        <div class="resist-row"><div class="resist-dot"></div><span class="resist-tag">EGKAlphaD</span><span class="resist-val">10⁵–10⁸ Ω/sq</span></div>
+        <div class="resist-row"><div class="resist-dot"></div><span class="resist-tag">EGKAlphaP</span><span class="resist-val">10⁵–10⁸ Ω/sq</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        if (input === correctPassword) {
-            passwordScreen.style.display = "none";   // Hide password screen
-            document.body.style.overflow = "auto";   // Enable scrolling
-        } else {
-            errorMsg.textContent = "❌ Kata laluan salah. Sila cuba lagi.";
-            document.getElementById("password-input").value = "";
-            document.getElementById("password-input").focus();
-            
-            // Shake animation
-            passwordScreen.style.animation = "shake 0.4s";
-            setTimeout(() => passwordScreen.style.animation = "", 400);
-        }
-    }
+<!-- SEMICONDUCTOR COATINGS -->
+<section id="coatings" style="padding-top:5rem;padding-bottom:5rem;padding-left:3rem;padding-right:3rem;">
+  <div class="container">
+    <div class="section-label">Semiconductor ESD Range</div>
+    <h2 class="section-title">Six Proprietary Coatings</h2>
+    <p class="section-sub">Each matched to a specific part type, substrate, and environment. All in production. All at 10⁵–10⁸ Ω/sq. Available for your parts today.</p>
 
-    // Enter key support
-    document.getElementById("password-input").addEventListener("keypress", function(e) {
-        if (e.key === "Enter") {
-            checkPassword();
-        }
-    });
+    <div class="coatings-grid">
+      <div class="coating-card">
+        <div class="coating-id">SC-01 · Automotive IC</div>
+        <div class="coating-name">EGKAlphaT</div>
+        <div class="coating-tag">Controlled dissipation for automotive chip packaging</div>
+        <div class="coating-specs">
+          <div class="spec-row"><span class="spec-key">RESISTIVITY</span><span class="spec-val">10⁵–10⁸ Ω/sq</span></div>
+          <div class="spec-row"><span class="spec-key">APPLICATION</span><span class="spec-val">Automotive IC Packaging</span></div>
+          <div class="spec-row"><span class="spec-key">STANDARD</span><span class="spec-val">ANSI/ESD S20.20</span></div>
+          <div class="spec-row"><span class="spec-key">SUBSTRATE</span><span class="spec-val">Metal, Composite, Plastic</span></div>
+        </div>
+        <div class="coating-badge">In Production · Ready Stock</div>
+      </div>
 
-    document.getElementById("submit-btn").addEventListener("click", checkPassword);
+      <div class="coating-card">
+        <div class="coating-id">SC-02 · Hard Surface</div>
+        <div class="coating-name">DiamondHard</div>
+        <div class="coating-tag">Superior ESD hardness for high-abrasion environments</div>
+        <div class="coating-specs">
+          <div class="spec-row"><span class="spec-key">RESISTIVITY</span><span class="spec-val">10⁵–10⁸ Ω/sq</span></div>
+          <div class="spec-row"><span class="spec-key">APPLICATION</span><span class="spec-val">Fixtures & Tooling</span></div>
+          <div class="spec-row"><span class="spec-key">HARDNESS</span><span class="spec-val">High Abrasion Resistance</span></div>
+          <div class="spec-row"><span class="spec-key">LIFETIME</span><span class="spec-val">Extended Service Life</span></div>
+        </div>
+        <div class="coating-badge">In Production · Ready Stock</div>
+      </div>
 
-    // Optional: Add shake animation
-    const style = document.createElement('style');
-    style.innerHTML = `
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20%, 60% { transform: translateX(-10px); }
-            40%, 80% { transform: translateX(10px); }
-        }
-    `;
-    document.head.appendChild(style);
-    // ==================== END PASSWORD PROTECTION ====================
-// Video tab switching
-function switchVideo(id,el){
-  document.querySelectorAll('.vtab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.video-panel').forEach(p=>p.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('vp-'+id).classList.add('active');
-}
+      <div class="coating-card">
+        <div class="coating-id">SC-03 · Cleanroom Grade</div>
+        <div class="coating-name">DiamondNeutral</div>
+        <div class="coating-tag">Neutral-tone, low-reflective for ISO Class 5–7 cleanrooms</div>
+        <div class="coating-specs">
+          <div class="spec-row"><span class="spec-key">RESISTIVITY</span><span class="spec-val">10⁵–10⁸ Ω/sq</span></div>
+          <div class="spec-row"><span class="spec-key">APPLICATION</span><span class="spec-val">Cleanroom Fixtures</span></div>
+          <div class="spec-row"><span class="spec-key">FINISH</span><span class="spec-val">Neutral / Low-Reflective</span></div>
+          <div class="spec-row"><span class="spec-key">CLEANROOM</span><span class="spec-val">ISO Class 5–7</span></div>
+        </div>
+        <div class="coating-badge">In Production · Ready Stock</div>
+      </div>
 
-// Sticky nav active section tracking
-const sections=document.querySelectorAll('section[id]');
-const navLinks=document.querySelectorAll('.snav-link');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      navLinks.forEach(l=>{
-        l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id);
-      });
-    }
-  });
-},{threshold:.3});
-sections.forEach(s=>observer.observe(s));
+      <div class="coating-card">
+        <div class="coating-id">SC-04 · Dual-Phase</div>
+        <div class="coating-name">EGKFusionDP</div>
+        <div class="coating-tag">Cutting-edge dual-phase protection for high-stakes automotive IC</div>
+        <div class="coating-specs">
+          <div class="spec-row"><span class="spec-key">RESISTIVITY</span><span class="spec-val">10⁵–10⁸ Ω/sq</span></div>
+          <div class="spec-row"><span class="spec-key">APPLICATION</span><span class="spec-val">Automotive IC · High-Stakes</span></div>
+          <div class="spec-row"><span class="spec-key">TECHNOLOGY</span><span class="spec-val">Dual-Phase Matrix</span></div>
+          <div class="spec-row"><span class="spec-key">PERFORMANCE</span><span class="spec-val">Enhanced Resilience</span></div>
+        </div>
+        <div class="coating-badge">In Production · Ready Stock</div>
+      </div>
 
-// Scroll reveal
-const revObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);}});
-},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
-</script>
+      <div class="coating-card">
+        <div class="coating-id">SC-05 · Alpha Series</div>
+        <div class="coating-name">EGKAlphaD</div>
+        <div class="coating-tag">Dissipative precision on general semiconductor tooling</div>
+        <div class="coating-specs">
+          <div class="spec-row"><span class="spec-key">RESISTIVITY</span><span class="spec-val">10⁵–10⁸ Ω/sq</span></div>
+          <div class="spec-row"><span class="spec-key">APPLICATION</span><span class="spec-val">General Semicon Tooling</span></div>
+          <div class="spec-row"><span class="spec-key">ADHESION</span><span class="spec-val">High-Bond Formulation</span></div>
+          <div class="spec-row"><span class="spec-key">SERIES</span><span class="spec-val">Alpha ESD Family</span></div>
+        </div>
+        <div class="coating-badge">In Production · Ready Stock</div>
+      </div>
+
+      <div class="coating-card">
+        <div class="coating-id">SC-06 · Flexible Substrates</div>
+        <div class="coating-name">EGKAlphaP</div>
+        <div class="coating-tag">Vaporized antistatic coating for polymer, rubber & foam</div>
+        <div class="coating-specs">
+          <div class="spec-row"><span class="spec-key">RESISTIVITY</span><span class="spec-val">10⁵–10⁸ Ω/sq</span></div>
+          <div class="spec-row"><span class="spec-key">APPLICATION</span><span class="spec-val">Flexible & Thin Layer</span></div>
+          <div class="spec-row"><span class="spec-key">SUBSTRATE</span><span class="spec-val">Polymer, Rubber, Foam</span></div>
+          <div class="spec-row"><span class="spec-key">SERIES</span><span class="spec-val">Alpha ESD Family</span></div>
+        </div>
+        <div class="coating-badge">In Production · Ready Stock</div>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;text-align:center;">
+      <a href="mailto:sales@egkhor.com.my?subject=Semiconductor%20Coating%20Enquiry" class="btn btn-primary">▸ Technical Enquiry for Semiconductor Coatings</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEDICAL COATINGS -->
+<section id="medical" class="resistivity">
+  <div class="container">
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="section-label" style="margin:0">Medical Division</div>
+      <div class="divider-line"></div>
+    </div>
+    <h2 class="section-title">Medical Device Coatings</h2>
+    <p class="section-sub">FDA-certified biological environmental coatings engineered for medical device performance and patient safety.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;">
+      <div class="coating-card" style="border:1px solid var(--border2);border-radius:12px;">
+        <div class="coating-id">MD-01 · Medical Instrument</div>
+        <div class="coating-name">EGKMeT</div>
+        <div class="coating-tag">Medical instrument & device coating — surgical anti-glare, wear reduction, extended lifespan</div>
+        <div class="coating-specs">
+          <div class="spec-row"><span class="spec-key">TYPE</span><span class="spec-val">Biological Environmental</span></div>
+          <div class="spec-row"><span class="spec-key">CERTIFICATION</span><span class="spec-val" style="color:var(--gold)">FDA Certified</span></div>
+          <div class="spec-row"><span class="spec-key">FRICTION</span><span class="spec-val">Significantly Reduced</span></div>
+          <div class="spec-row"><span class="spec-key">LIGHT</span><span class="spec-val">Surgical Anti-Glare</span></div>
+        </div>
+        <div class="coating-badge">In Production · FDA Certified</div>
+      </div>
+
+      <div class="coating-card" style="border:1px solid var(--border2);border-radius:12px;">
+        <div class="coating-id">MD-02 · Orthopedic Implant</div>
+        <div class="coating-name">EGKMeAT</div>
+        <div class="coating-tag">Orthopedic implant coating — superior cell adhesion, osseointegration, load-bearing wear resistance</div>
+        <div class="coating-specs">
+          <div class="spec-row"><span class="spec-key">TYPE</span><span class="spec-val">Biological Environmental</span></div>
+          <div class="spec-row"><span class="spec-key">CERTIFICATION</span><span class="spec-val" style="color:var(--gold)">FDA Certified</span></div>
+          <div class="spec-row"><span class="spec-key">CELL ADHESION</span><span class="spec-val">Superior Support</span></div>
+          <div class="spec-row"><span class="spec-key">OSSEOINTEGRATION</span><span class="spec-val">Enhanced Bonding</span></div>
+        </div>
+        <div class="coating-badge">In Production · FDA Certified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" style="padding:5rem 3rem;">
+  <div class="container">
+    <div class="section-label">Sectors We Serve</div>
+    <h2 class="section-title">Industries We Coat For</h2>
+    <p class="section-sub">EGK coatings are matched to the yield economics and compliance requirements of each environment.</p>
+
+    <div class="industries-grid">
+      <div class="industry-card">
+        <div class="industry-icon">🏭</div>
+        <div>
+          <div class="industry-name">OSAT / Automotive IC Packaging</div>
+          <div class="industry-desc">ESD coatings for test sockets, nests, change kits, and handler tooling in automotive chip packaging environments.</div>
+          <div class="industry-products">◈ EGKAlphaT · FusionDP</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">⚙️</div>
+        <div>
+          <div class="industry-name">Semiconductor Equipment & Tooling</div>
+          <div class="industry-desc">Coating for NS6xxx/7xxx/8xxx, Multitest/Cohu MT9510, Delta Matrix, and Castle platform parts.</div>
+          <div class="industry-products">◈ DiamondHard · AlphaD</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🔬</div>
+        <div>
+          <div class="industry-name">Cleanroom Tooling & Fixtures</div>
+          <div class="industry-desc">Neutral-tone, low-reflective coatings compatible with ISO Class 5–7 cleanrooms with optical inspection systems.</div>
+          <div class="industry-products">◈ DiamondNeutral</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🏥</div>
+        <div>
+          <div class="industry-name">Medical Devices & Implants</div>
+          <div class="industry-desc">FDA-certified biological coatings for surgical instruments, orthopedic implants, and precision medical devices.</div>
+          <div class="industry-products">◈ EGKMeT · EGKMeAT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY EGK -->
+<section id="why" class="why-bg">
+  <div class="container">
+    <div class="section-label">Local Advantage</div>
+    <h2 class="section-title">Why EGK</h2>
+    <p class="section-sub">We are engineers from the semiconductor industry — applying specialist coatings to the same class of parts we spent 20 years working with.</p>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-title">Based in Penang — Your Supply Chain</div>
+        <div class="why-desc">Headquartered in Batu Maung. Fast response. No lead time delays. On-site part submission and collection. We are part of the same semiconductor corridor you operate in.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-title">We Know the Parts We Coat</div>
+        <div class="why-desc">Fortune 500 semiconductor experience from Broadcom, Infineon, Renesas, and Freescale. We understand the yield economics, not just the chemistry.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-title">Coating Matched to Your Part</div>
+        <div class="why-desc">We match product selection to your substrate material, part geometry, handler platform, and production environment. The right coating for your specific application.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-title">Certified & In-Production</div>
+        <div class="why-desc">All 8 coatings are in production with ready stock. Semiconductor products comply with ANSI/ESD S20.20. Medical products carry FDA certification.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IP PORTFOLIO -->
+<section style="padding:5rem 3rem;">
+  <div class="container">
+    <div class="section-label">Intellectual Property</div>
+    <h2 class="section-title">Our IP Portfolio</h2>
+    <div class="ip-grid">
+      <div class="ip-item">
+        <span class="ip-num">350+</span>
+        <div class="ip-label">ESD Coated Parts</div>
+      </div>
+      <div class="ip-item">
+        <span class="ip-num">368+</span>
+        <div class="ip-label">Graphic Copyrights</div>
+      </div>
+      <div class="ip-item">
+        <span class="ip-num">377+</span>
+        <div class="ip-label">Software Copyrights</div>
+      </div>
+      <div class="ip-item">
+        <span class="ip-num">15+</span>
+        <div class="ip-label">Publication ISBNs</div>
+      </div>
+      <div class="ip-item">
+        <span class="ip-num">18+</span>
+        <div class="ip-label">3D Model IP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="padding:5rem 3rem;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Social Proof</div>
+    <h2 class="section-title">What Partners Say</h2>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-text">Although EG was with us at Freescale for only a short time, his outstanding productivity in KLM left a lasting impression on me.</div>
+        <div class="testimonial-author">
+          <div class="author-name">Nader Harabi</div>
+          <div class="author-role">Vice President, AMD · Former Director, Freescale</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-text">EGK founder EG possesses a strong background in semiconductor backend testing, spanning both hardware and software.</div>
+        <div class="testimonial-author">
+          <div class="author-name">LS Toh</div>
+          <div class="author-role">Director, Broadcom Inc.</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-text">EGK impressed us with their ability to deliver high-quality software at the speed of sound — truly swift, precise, and reliable.</div>
+        <div class="testimonial-author">
+          <div class="author-name">Christopher Chin</div>
+          <div class="author-role">Team Manager, Renesas Electronics</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-text">EGK's exceptional support turned the impossible into reality — preventing delays and generating millions in added value.</div>
+        <div class="testimonial-author">
+          <div class="author-name">Chris Liew</div>
+          <div class="author-role">Subcon Management Operation Director, Infineon Technologies</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners-strip">
+  <div class="partners-label">Trusted Partners & Collaborators</div>
+  <div class="partners-row">
+    <div class="partner-tag">Broadcom</div>
+    <div class="partner-tag">Infineon</div>
+    <div class="partner-tag">Renesas</div>
+    <div class="partner-tag">Apple</div>
+    <div class="partner-tag">Microsoft</div>
+    <div class="partner-tag">Google</div>
+    <div class="partner-tag">Freescale</div>
+    <div class="partner-tag">Analog Devices</div>
+    <div class="partner-tag">Huawei</div>
+    <div class="partner-tag">KPM · MOE Malaysia</div>
+  </div>
+</div>
+
+<!-- PORTALS -->
+<section style="padding:5rem 3rem;">
+  <div class="container">
+    <div class="section-label">EGK Digital Ecosystem</div>
+    <h2 class="section-title">Explore EGK</h2>
+    <p class="section-sub">EGK operates across multiple divisions — each with a dedicated portal.</p>
+
+    <div class="portals-grid">
+      <a href="https://egkhor.com.my/hardware/" target="_blank" class="portal-card">
+        <div class="portal-icon">⚙️</div>
+        <div class="portal-title">Hardware & Parts</div>
+        <div class="portal-desc">Precision-fabricated change kits, test sockets, jigs, spare parts. 2-micron tolerance. Up to 84% OEM savings.</div>
+        <div class="portal-link">Visit Hardware Portal ↗</div>
+      </a>
+      <a href="https://egkhor.com.my/software/" target="_blank" class="portal-card">
+        <div class="portal-icon">🖥️</div>
+        <div class="portal-title">Software Hub</div>
+        <div class="portal-desc">230+ iOS apps, 66+ Android apps, EDA tools, AR education, humanitarian tools, and AI platforms.</div>
+        <div class="portal-link">Visit Software Hub ↗</div>
+      </a>
+      <a href="https://egkhor.com.my/book/" target="_blank" class="portal-card">
+        <div class="portal-icon">📚</div>
+        <div class="portal-title">BookStore</div>
+        <div class="portal-desc">13+ published titles including STEM guides, AI frameworks, and investment research by Isaac Khor.</div>
+        <div class="portal-link">Visit BookStore ↗</div>
+      </a>
+      <a href="https://egkhor.com.my/software/uav/" target="_blank" class="portal-card">
+        <div class="portal-icon">✈️</div>
+        <div class="portal-title">UAV Programme</div>
+        <div class="portal-desc">UAV-LRS-2000 (2,000 km range) and UAV-PSH-001 pusher config. Full technical drawings and BOM.</div>
+        <div class="portal-link">View UAV Programme ↗</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container" style="position:relative;">
+    <div class="section-label" style="text-align:center;">Get Started</div>
+    <h2 class="cta-title">
+      Your Parts Need<br><span style="color:var(--accent)">ESD Coating.</span><br>We Do That.
+    </h2>
+    <p class="cta-sub">
+      Tell us your part, your substrate, and your handler platform. We'll match the right coating from our 8 in-production proprietary products.
+    </p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="mailto:sales@egkhor.com.my?subject=ESD%20Coating%20Enquiry" class="btn btn-primary">⬤ Enquire About Coating</a>
+      <a href="mailto:admin@egkhor.com.my" class="btn btn-outline">▸ Talk to Engineer</a>
+      <a href="https://wa.me/+60126251171" target="_blank" class="btn btn-outline">💬 WhatsApp Us</a>
+    </div>
+
+    <div class="cta-contact">
+      <div class="contact-item">📍 <span>Batu Maung, Penang, Malaysia</span></div>
+      <div class="contact-item">📞 <a href="tel:+60445059700">+604-505-9700</a></div>
+      <div class="contact-item">✉️ <a href="mailto:sales@egkhor.com.my">sales@egkhor.com.my</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="#" class="nav-logo" style="display:inline-flex;margin-bottom:1rem;">
+        <div class="nav-logo-mark">EGK</div>
+        <div class="nav-logo-text">EGK Microelectronic<small>Solutions Group Sdn. Bhd.</small></div>
+      </a>
+      <p class="footer-brand-text">ESD coating specialists for semiconductor precision parts and medical devices. Penang-based. Fortune 500 alumni. AI software, UAV engineering, and eBook publishing.</p>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1rem;">
+        <a href="https://www.facebook.com/share/1CAVNXnKS1/" target="_blank" style="font-size:0.75rem;color:var(--muted);text-decoration:none;padding:0.3rem 0.6rem;border:1px solid var(--border);border-radius:4px;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Facebook</a>
+        <a href="https://www.linkedin.com/company/egk-microelectronic-solutions-group-sdn-bhd/" target="_blank" style="font-size:0.75rem;color:var(--muted);text-decoration:none;padding:0.3rem 0.6rem;border:1px solid var(--border);border-radius:4px;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">LinkedIn</a>
+        <a href="https://www.instagram.com/egkmicro" target="_blank" style="font-size:0.75rem;color:var(--muted);text-decoration:none;padding:0.3rem 0.6rem;border:1px solid var(--border);border-radius:4px;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Instagram</a>
+        <a href="https://x.com/egkmsg" target="_blank" style="font-size:0.75rem;color:var(--muted);text-decoration:none;padding:0.3rem 0.6rem;border:1px solid var(--border);border-radius:4px;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">𝕏</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Coatings</div>
+      <ul class="footer-links">
+        <li><a href="#coatings">EGKAlphaT</a></li>
+        <li><a href="#coatings">DiamondHard</a></li>
+        <li><a href="#coatings">DiamondNeutral</a></li>
+        <li><a href="#coatings">EGKFusionDP</a></li>
+        <li><a href="#coatings">EGKAlphaD</a></li>
+        <li><a href="#coatings">EGKAlphaP</a></li>
+        <li><a href="#medical">EGKMeT</a></li>
+        <li><a href="#medical">EGKMeAT</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#coatings">What We Coat</a></li>
+        <li><a href="#why">About EGK</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="https://egkhor.com.my/about-us/" target="_blank">About Us ↗</a></li>
+        <li><a href="https://egkhor.com.my/privacy" target="_blank">Privacy Policy ↗</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Portals</div>
+      <ul class="footer-links">
+        <li><a href="https://egkhor.com.my/hardware/" target="_blank">Hardware & Parts ↗</a></li>
+        <li><a href="https://egkhor.com.my/software/" target="_blank">Software Hub ↗</a></li>
+        <li><a href="https://egkhor.com.my/book/" target="_blank">BookStore ↗</a></li>
+        <li><a href="https://egkhor.com.my/software/uav/" target="_blank">UAV Programme ↗</a></li>
+        <li><a href="https://egkhor.com.my/gov/kpm/" target="_blank">Gov / KPM ↗</a></li>
+        <li><a href="https://egkhor.com.my/ai/" target="_blank">AI Division ↗</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 EGK Microelectronic Solutions Group Sdn. Bhd. · 202501002992 (1604405-X)</span>
+    <span>e-Commerce Powered by Stripe · IsaacLab ©</span>
+  </div>
+</footer>
+
 </body>
 </html>
-
-
-
